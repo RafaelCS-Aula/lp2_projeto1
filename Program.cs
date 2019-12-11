@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 
 namespace Projeto_imdb_analyser
 {
@@ -6,8 +7,14 @@ namespace Projeto_imdb_analyser
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             
+            var e = Enum.GetValues(typeof(GenreOptions));
+        
+            foreach (var t in e) Console.WriteLine(t);
+            
+            
+            
+
         }
     }
 }
