@@ -25,7 +25,8 @@ namespace Projeto_imdb_analyser
         /// <summary>
         ///  class for items from the title.basics database
         /// </summary>
-        /// <param name="tconst">alphanumeric unique identifier of the title/episode</param>
+        /// <param name="tconst">alphanumeric unique identifier of the title/
+        /// episode</param>
         /// <param name="titleType"> the type/format of the title (e.g. movie,
         ///  short, tvseries, tvepisode, video, etc)</param>
         /// <param name="title"> the more popular title / the title used by the
@@ -33,8 +34,13 @@ namespace Projeto_imdb_analyser
         /// <param name="isAdult"> IS rated for Adults</param>
         /// <param name="genres"> includes up to three genres associated with
         ///  the title</param>
-        /// <param name="startYear">represents the release year of a title. In the case of TV Series, it is the series start year </param>
+        /// <param name="rating"> Rating in a 5 star system</param>
+        /// <param name="startYear">represents the release year of a title. In
+        ///  the case of TV Series, it is the series start year </param>
         /// <param name="endYear">TV Series end year.</param>
+        /// <param name="parentTconst"> ID of parent title </param>
+        /// <param name="season"> What season of parent this episode is from</param>
+        /// <param name="episodeNumber"> what is the episode number </param>
         public dbTitle(short tconst, PictureTypeOptions titleType, string title, bool isAdult, GenreOptions[] genres, float rating, int startYear, int? endYear = 0, short? parentTconst = 0, short? season = 0, short? episodeNumber = 0)
         {
             DatabaseId = tconst;
