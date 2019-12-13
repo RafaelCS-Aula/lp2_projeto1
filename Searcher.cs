@@ -29,10 +29,12 @@ namespace Projeto_imdb_analyser
                 dataBaseToBeSearched  =  CullByAdult((bool)r.finalResult);
 
                 else if(r.GetType() == typeof(GenreValueSortOption))
-                dataBaseToBeSearched  =  CullByGenre(r.finalResult as GenreOptions[]);
+                dataBaseToBeSearched  =  
+                        CullByGenre(r.finalResult as GenreOptions[]);
 
                 else if(r.GetType() == typeof(TypeValueSortOption))
-                dataBaseToBeSearched  =  CullByType((PictureTypeOptions)r.finalResult);
+                dataBaseToBeSearched  =  
+                        CullByType((PictureTypeOptions)r.finalResult);
             }
 
 

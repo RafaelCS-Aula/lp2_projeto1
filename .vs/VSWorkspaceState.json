@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\enums"
   ],
-  "SelectedNode": "\\TypeValueSortOption.cs",
+  "SelectedNode": "\\FileSearcher.cs",
   "PreviewInSolutionExplorer": false
 }
