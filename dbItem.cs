@@ -5,7 +5,5 @@ namespace Projeto_imdb_analyser
     /// </summary>
     public abstract class dbItem
     {
-
-
     }
 }
