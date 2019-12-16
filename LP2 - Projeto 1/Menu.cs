@@ -277,10 +277,94 @@ namespace LP2___Projeto_1
                 );
         }
 
+        private void PrintSeriesResults(
+           IDictionary<string, Episode> filteredTitles)
+        {
+            List<KeyValuePair<string, Episode>> titles = filteredTitles.ToList();
+            List<string[]> options = new List<string[]>();
+            Renderer.DrawResults(
+                (IPrintable table, int index, int selection) =>
+                {
+                    KeyValuePair<string, Episode> t = titles[index];
+
+                    string name = "Episode " + t.Value.Number;
+                    if (name.Length > 48)
+                        name = name.Substring(0, 48) + "...";
+
+                    string c = t.Value.Season;
+
+                    options.Add(new string[] {
+                            name,
+                            c,
+                        });
+                },
+                (IPrintable table, int selection, int maxResults) =>
+                {
+                    ((Table)table).Options = options;
+                    ((Table)table).Columns[0].Size = new Rect(0, 0, 55, 1);
+                    ((Table)table).Columns[0].Header = "Episode Nº";
+                    ((Table)table).Columns[1].Size = new Rect(0, 0, 8, 1);
+                    ((Table)table).Columns[1].Header = "Season";
+
+                    ((Table)table).Selection = selection % maxResults;
+                    table.Print();
+
+                    int counter = options.Count;
+
+                    options.Clear();
+
+                    Console.CursorTop = 33;
+                    Console.CursorLeft = 0;
+                    for (int i = 33; i < 38; i++)
+                        Console.WriteLine(' '.Repeat(Console.BufferWidth));
+
+                    Console.CursorTop = 33;
+                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+                    titles[selection].Value.ToString().Print();
+
+                    Console.CursorTop = 35;
+                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
+                    Console.WriteLine("a - By Name\ts - By Year\td - By Classification");
+
+                    return counter;
+                },
+                (ConsoleKeyInfo keyInfo, int selection) =>
+                {
+                    /*if (keyInfo.Key == ConsoleKey.A)
+                        titles = titles.Sort(x => x.Key.PrimaryTitle.ConvertToString());
+                    else if (keyInfo.Key == ConsoleKey.S)
+                        titles = titles.Sort(x => x.Key.StartYear);
+                    else if (keyInfo.Key == ConsoleKey.D)
+                        titles = titles.Sort(x => x.Value?.AvarageRating);
+                    else*/ if (keyInfo.Key == ConsoleKey.Enter)
+                    {
+                        Renderer.DrawTitle();
+
+                        Console.WriteLine();
+                        Console.WriteLine("Loading...");
+                        //PrintTitleSpecs(titles[selection]);
+
+                        Renderer.DrawTitle();
+                    }
+                },
+                titles.Count,
+                "Episode Result"
+                );
+        }
+
         private void PrintTitleSpecs(
            KeyValuePair<Title, Rating> title)
         {
-            IEnumerable<IDictionary<string, IIMDBValue>> people =
+            if (title.Key.IsSeries)
+            {
+                IDictionary<string, Episode> episodes =
+                   IMDBSearcher.LoadEpisodes(title.Key);
+                PrintSeriesResults(episodes);
+
+                return;
+            }
+
+                IEnumerable<IDictionary<string, IIMDBValue>> people =
                IMDBSearcher.LoadPeopleForTitle(title);
             IDictionary<string, Crew> crew =
                 people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);

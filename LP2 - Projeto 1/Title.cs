@@ -57,6 +57,8 @@ namespace LP2___Projeto_1
         }
         public virtual bool IsEpisode
             => Type.Contains("tvEpisode");
+        public virtual bool IsSeries
+            => Type.Contains("tvSeries");
 
         public Title(string line)
         {

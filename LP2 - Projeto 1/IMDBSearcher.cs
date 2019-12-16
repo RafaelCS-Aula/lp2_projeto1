@@ -53,6 +53,30 @@ namespace LP2___Projeto_1
             LoadBasics();
         }
 
+        public virtual IDictionary<string, Episode> LoadEpisodes(
+            Title title)
+        {
+            IIMDBReader<Episode> episodeReader
+                            = new IMDBFileReader<Episode>(FileEpisodesBasicsFull);
+
+            if (EpisodeLineCount == 0)
+                EpisodeLineCount = episodeReader.LineCount();
+
+            int count = EpisodeLineCount;
+            int progress = 0;
+            IPrintable progressBar = new ProgressBar(new Rect(12, 10, 100, 1));
+            progressBar.Print();
+
+            return episodeReader.Read((int e) =>
+                {
+                    progress = e;
+                    ((ProgressBar)progressBar).Progress =
+                            (float)progress / (float)count;
+                }).Where(x => x.Parent.Contains(title.ID))
+            .GroupBy(x => x.ID)
+            .ToDictionary(t => t.Key, t => t.First());
+        }
+
         public virtual IDictionary<Title, Rating> LoadTitles(
            SearchType searchType,
            string type)
