@@ -29,6 +29,8 @@ namespace LP2___Projeto_1
                 obj = Rating.Parse(line);
             else if (typeof(Principal) == typeof(T))
                 obj = Principal.Parse(line);
+            else if (typeof(Episode) == typeof(T))
+                obj = Episode.Parse(line);
 
             return (T)obj;
         }

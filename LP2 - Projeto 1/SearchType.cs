@@ -17,5 +17,6 @@ namespace LP2___Projeto_1
         DeathYear = 8,
         Profession = 9,
         Custom = 10,
+        Episode = 11,
     }
 }

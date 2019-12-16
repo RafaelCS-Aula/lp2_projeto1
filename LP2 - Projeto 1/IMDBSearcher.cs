@@ -14,6 +14,7 @@ namespace LP2___Projeto_1
         private readonly string crewFilename        = "title.crew.tsv.gz";
         private readonly string ratingsFilename     = "title.ratings.tsv.gz";
         private readonly string principalsFilename  = "title.principals.tsv.gz";
+        private readonly string episodesFilename    = "title.episode.tsv.gz";
 
         public string AppName { get; set; }
         protected virtual string FolderWithFiles
@@ -34,11 +35,14 @@ namespace LP2___Projeto_1
             => Path.Combine(FolderWithFiles, principalsFilename);
         protected virtual string FileRatingsBasicsFull
             => Path.Combine(FolderWithFiles, ratingsFilename);
+        protected virtual string FileEpisodesBasicsFull
+            => Path.Combine(FolderWithFiles, episodesFilename);
         protected int TitlesLineCount { get; set; }
         protected int RatingsLineCount { get; set; }
         protected int PeopleLineCount { get; set; }
         protected int CrewLineCount { get; set; }
         protected int PrincipalsLineCount { get; set; }
+        protected int EpisodeLineCount { get; set; }
         public ISet<string> Genres { get; } = new HashSet<string>();
         public ISet<string> Types { get; } = new HashSet<string>();
         public ISet<string> Professions { get; } = new HashSet<string>();
@@ -74,6 +78,30 @@ namespace LP2___Projeto_1
             {
                 switch (searchType)
                 {
+                    case SearchType.Episode:
+                        IDictionary<string, Title> values0
+                            = titleReader.Read((int e) =>
+                        {
+                            progress = e;
+                            ((ProgressBar)progressBar).Progress =
+                                    (float)progress / (float)count;
+                        }).Where(x => x.ID.Contains(type))
+                        .GroupBy(x => x.ID)
+                        .ToDictionary(t => t.Key, t => t.First());
+                        values = values0.GroupJoin(
+                            ratingsReader.Read((int e) =>
+                            {
+                                ((ProgressBar)progressBar).Progress =
+                                    (float)(progress + e) / (float)count;
+                            }).Where(x => values0.TryGetValue(x.ID, out Title t)),
+                                    title => title.Key,
+                                    rating => rating.ID,
+                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
+                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                           true)
+                               .GroupBy(t => t.Title.ID)
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                        break;
                     case SearchType.Type:
                         IDictionary<string, Title> values1 =
                             titleReader.Read((int e) =>
@@ -495,6 +523,35 @@ namespace LP2___Projeto_1
                     principals.ToDictionary(t => t.Key, t => (IIMDBValue)t.Value),
                     people.ToDictionary(t => t.Key, t => (IIMDBValue)t.Value)
                 };
+        }
+
+        public virtual KeyValuePair<Title, Rating>? LoadEpisodeTitle(Title title)
+        {
+            ProgressBar progressBar = new ProgressBar(new Rect(12, 10, 104, 1));
+
+            IIMDBReader<Episode> episodeReader =
+                new IMDBFileReader<Episode>(FileEpisodesBasicsFull);
+
+            if (EpisodeLineCount == 0)
+                EpisodeLineCount = episodeReader.LineCount();
+
+            int progress = 0;
+            int count = EpisodeLineCount;
+            progressBar.Print();
+            Episode[] episodes = episodeReader.Read((int e) =>
+                    {
+                        progress++;
+                        progressBar.Progress = (float)progress / (float)count;
+                    })
+                .Where(x => title.ID.Contains(x.ID)).ToArray();
+
+            if (episodes.Length == 0)
+                return null;
+
+            return 
+                LoadTitles(
+                    SearchType.Episode, 
+                    episodes.FirstOrDefault().Parent).FirstOrDefault();
         }
 
         protected virtual int LineCount(string filename)

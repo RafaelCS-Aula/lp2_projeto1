@@ -55,6 +55,8 @@ namespace LP2___Projeto_1
                 return Line.ConvertToString().Split("\t")[3].Equals("0") ? false : true;
             }
         }
+        public virtual bool IsEpisode
+            => Type.Contains("tvEpisode");
 
         public Title(string line)
         {

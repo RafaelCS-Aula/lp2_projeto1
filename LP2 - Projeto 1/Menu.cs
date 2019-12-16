@@ -281,7 +281,7 @@ namespace LP2___Projeto_1
            KeyValuePair<Title, Rating> title)
         {
             IEnumerable<IDictionary<string, IIMDBValue>> people =
-                IMDBSearcher.LoadPeopleForTitle(title);
+               IMDBSearcher.LoadPeopleForTitle(title);
             IDictionary<string, Crew> crew =
                 people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);
             IDictionary<string, Principal> principals =
@@ -289,11 +289,24 @@ namespace LP2___Projeto_1
             IDictionary<string, Person> people2 =
                 people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
 
-            Renderer.PrintTitleSpecs(
-                title,
-                IMDBSearcher.LoadCast(people2, principals),
-                IMDBSearcher.LoadDirectors(people2, crew),
-                IMDBSearcher.LoadWriters(people2, crew));
+            if (title.Key.IsEpisode)
+            {
+                KeyValuePair<Title, Rating>? episodeTitle = IMDBSearcher.LoadEpisodeTitle(title.Key);
+                Renderer.PrintTitleSpecs(
+                    title,
+                    episodeTitle,
+                    IMDBSearcher.LoadCast(people2, principals),
+                    IMDBSearcher.LoadDirectors(people2, crew),
+                    IMDBSearcher.LoadWriters(people2, crew));
+            }
+            else
+            {
+                Renderer.PrintTitleSpecs(
+                    title,
+                    IMDBSearcher.LoadCast(people2, principals),
+                    IMDBSearcher.LoadDirectors(people2, crew),
+                    IMDBSearcher.LoadWriters(people2, crew));
+            }
         }
 
         private void DrawPersonSearchMenu(
