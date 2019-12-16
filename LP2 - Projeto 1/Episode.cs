@@ -20,6 +20,11 @@ namespace LP2___Projeto_1
             Line = line.ToCharArray();
         }
 
+        public override string ToString()
+        {
+            return "Episode nº " + Number + "\tSeason : " + Season;
+        }
+
         public static Episode Parse(string line)
         {
             return new Episode(line);

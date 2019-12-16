@@ -277,15 +277,16 @@ namespace LP2___Projeto_1
                 );
         }
 
-        private void PrintSeriesResults(
-           IDictionary<string, Episode> filteredTitles)
+        private void PrintEpisodeResults(
+           IDictionary<string, Episode> filteredEpisodes,
+           KeyValuePair<Title, Rating> title)
         {
-            List<KeyValuePair<string, Episode>> titles = filteredTitles.ToList();
+            List<KeyValuePair<string, Episode>> episodes = filteredEpisodes.ToList();
             List<string[]> options = new List<string[]>();
             Renderer.DrawResults(
                 (IPrintable table, int index, int selection) =>
                 {
-                    KeyValuePair<string, Episode> t = titles[index];
+                    KeyValuePair<string, Episode> t = episodes[index];
 
                     string name = "Episode " + t.Value.Number;
                     if (name.Length > 48)
@@ -320,7 +321,7 @@ namespace LP2___Projeto_1
 
                     Console.CursorTop = 33;
                     "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
-                    titles[selection].Value.ToString().Print();
+                    episodes[selection].Value.ToString().Print();
 
                     Console.CursorTop = 35;
                     "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
@@ -339,17 +340,37 @@ namespace LP2___Projeto_1
                     else*/ if (keyInfo.Key == ConsoleKey.Enter)
                     {
                         Renderer.DrawTitle();
+                        Renderer.DrawLoading();
 
-                        Console.WriteLine();
-                        Console.WriteLine("Loading...");
-                        //PrintTitleSpecs(titles[selection]);
+                        PrintEpisodeSpecs(episodes[selection], title);
 
                         Renderer.DrawTitle();
                     }
                 },
-                titles.Count,
+                episodes.Count,
                 "Episode Result"
                 );
+        }
+
+        private void PrintEpisodeSpecs(
+            KeyValuePair<string, Episode> episode, 
+            KeyValuePair<Title, Rating> title)
+        {
+            IEnumerable<IDictionary<string, IIMDBValue>> people =
+              IMDBSearcher.LoadPeopleForTitle(title);
+            IDictionary<string, Crew> crew =
+                people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);
+            IDictionary<string, Principal> principals =
+                people.ElementAt(1).ToDictionary(t => t.Key, T => (Principal)T.Value);
+            IDictionary<string, Person> people2 =
+                people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
+
+            Renderer.PrintEpisodeSpecs(
+                episode,
+                title,
+                IMDBSearcher.LoadCast(people2, principals),
+                IMDBSearcher.LoadDirectors(people2, crew),
+                IMDBSearcher.LoadWriters(people2, crew));
         }
 
         private void PrintTitleSpecs(
@@ -359,12 +380,12 @@ namespace LP2___Projeto_1
             {
                 IDictionary<string, Episode> episodes =
                    IMDBSearcher.LoadEpisodes(title.Key);
-                PrintSeriesResults(episodes);
+                PrintEpisodeResults(episodes, title);
 
                 return;
             }
 
-                IEnumerable<IDictionary<string, IIMDBValue>> people =
+            IEnumerable<IDictionary<string, IIMDBValue>> people =
                IMDBSearcher.LoadPeopleForTitle(title);
             IDictionary<string, Crew> crew =
                 people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);

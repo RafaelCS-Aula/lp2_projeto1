@@ -33,6 +33,12 @@ namespace LP2___Projeto_1
            IDictionary<Person, Principal> cast,
            IEnumerable<Person> directors,
            IEnumerable<Person> writers);
+        void PrintEpisodeSpecs(
+            KeyValuePair<string, Episode> episode,
+            KeyValuePair<Title, Rating> title,
+            IDictionary<Person, Principal> cast,
+            IEnumerable<Person> directors,
+            IEnumerable<Person> writers);
         void PrintNameSpecs(
             Person person,
             IDictionary<string, Title> knownForTitles);

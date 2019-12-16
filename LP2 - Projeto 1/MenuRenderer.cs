@@ -221,6 +221,49 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
+        public void PrintEpisodeSpecs(
+            KeyValuePair<string, Episode> episode,
+            KeyValuePair<Title, Rating> title,
+            IDictionary<Person, Principal> cast,
+            IEnumerable<Person> directors,
+            IEnumerable<Person> writers)
+        {
+            DrawTitle();
+            Console.WriteLine();
+
+            "Title : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+            title.Key.ToString().Print(ConsoleColor.White);
+            Console.WriteLine();
+            title.Value?.Print();
+            Console.WriteLine();
+
+            "Episode : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+            episode.ToString().Print(ConsoleColor.White);
+            Console.WriteLine();
+
+            "Director(s) : ".Print(
+                    ConsoleColor.Red,
+                    ConsoleColor.Black,
+                    false);
+            directors.Print(ConsoleColor.White);
+
+            "Writer(s) : ".Print(
+                    ConsoleColor.Red,
+                    ConsoleColor.Black,
+                    false);
+            writers.Print(ConsoleColor.White);
+
+            Console.WriteLine();
+            cast.Print(ConsoleColor.White);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            "Press [Enter] To Continue...".Print(ConsoleColor.Red);
+
+            Console.ReadLine();
+        }
+
         public void PrintTitleSpecs(
            KeyValuePair<Title, Rating> title,
            KeyValuePair<Title, Rating>? episodeParent,
