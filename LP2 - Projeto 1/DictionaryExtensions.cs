@@ -42,7 +42,10 @@ namespace LP2___Projeto_1
                 Console.CursorLeft = 90;
                 if (person.Value.Characters != @"\N")
                     person.Value.Characters.Print(
-                            ConsoleColor.White);
+                            ConsoleColor.White, 
+                            ConsoleColor.Black, 
+                            false);
+                Console.WriteLine();
             }
         }
 
