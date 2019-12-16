@@ -9,7 +9,7 @@ namespace LP2___Projeto_1
         public static void Print(
            this IDictionary<Person, Principal> people,
            ConsoleColor foreColor,
-           ConsoleColor backcolor = ConsoleColor.Black)
+           ConsoleColor backColor = ConsoleColor.Black)
         {
             foreach (KeyValuePair<Person, Principal> person in people)
             {
@@ -21,8 +21,8 @@ namespace LP2___Projeto_1
                            false);
                 Console.CursorLeft = 30;
                 person.Key.BirthYear.ToString()
-                          .Print(ConsoleColor.White, 
-                                 ConsoleColor.Black, 
+                          .Print(foreColor, 
+                                 backColor, 
                                  false);
                 Console.CursorLeft = 38;
                 person.Value.Category.Print(
@@ -35,15 +35,15 @@ namespace LP2___Projeto_1
                 if (job.Length > 30)
                     job = job.Substring(0, 32) + "...";
                 if (job != @"\N")
-                    job.Print(ConsoleColor.White,
-                              ConsoleColor.Black,
+                    job.Print(foreColor,
+                              backColor,
                               false);
 
                 Console.CursorLeft = 90;
                 if (person.Value.Characters != @"\N")
                     person.Value.Characters.Print(
-                            ConsoleColor.White, 
-                            ConsoleColor.Black, 
+                            foreColor, 
+                            backColor, 
                             false);
                 Console.WriteLine();
             }

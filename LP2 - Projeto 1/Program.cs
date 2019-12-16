@@ -20,8 +20,11 @@ namespace LP2___Projeto_1
                 Console.LargestWindowWidth, 
                 Console.LargestWindowHeight);
 
-            IMenu menu = new Menu(new MenuRenderer(), appName);
-
+            IMenuRenderer menuRenderer 
+                = new MenuRenderer();
+            IMenu menu = new Menu(
+                menuRenderer, 
+                appName);
             menu.MainLoop();
 
             Console.Clear();

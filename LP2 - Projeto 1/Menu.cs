@@ -12,12 +12,14 @@ namespace LP2___Projeto_1
         void MainLoop();
     }
 
-    public class Menu : IMenu
+    sealed public class Menu : IMenu
     {
-        protected IMDBSearcher IMDBSearcher { get; }
-        protected IMenuRenderer Renderer { get; }
+        private IMDBSearcher IMDBSearcher { get; }
+        private IMenuRenderer Renderer { get; }
 
-        public Menu(IMenuRenderer renderer, string appName)
+        public Menu(
+            IMenuRenderer renderer, 
+            string appName)
         {
             Renderer = renderer;
             Renderer.DrawTitle();
@@ -25,7 +27,8 @@ namespace LP2___Projeto_1
             IMDBSearcher = new IMDBSearcher(appName);
         }
 
-        protected virtual void DrawTitleSearchMenu(SearchType searchType)
+        private void DrawTitleSearchMenu(
+            SearchType searchType)
         {
             List<string[]> options;
             IPrintable textBox;
@@ -180,7 +183,8 @@ namespace LP2___Projeto_1
             Renderer.DrawTitle();
         }
 
-        protected virtual void PrintTitleResults(IDictionary<Title, Rating> filteredTitles)
+        private void PrintTitleResults(
+            IDictionary<Title, Rating> filteredTitles)
         {
             List<KeyValuePair<Title, Rating>> titles = filteredTitles.ToList();
             List<string[]> options = new List<string[]>();
@@ -273,7 +277,7 @@ namespace LP2___Projeto_1
                 );
         }
 
-        protected virtual void PrintTitleSpecs(
+        private void PrintTitleSpecs(
            KeyValuePair<Title, Rating> title)
         {
             IEnumerable<IDictionary<string, IIMDBValue>> people =
@@ -285,46 +289,15 @@ namespace LP2___Projeto_1
             IDictionary<string, Person> people2 =
                 people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
 
-            IDictionary<Person, Principal> cast =
-                IMDBSearcher.LoadCast(people2, principals);
-            IEnumerable<Person> directors =
-                IMDBSearcher.LoadDirectors(people2, crew);
-            IEnumerable<Person> writers =
-                IMDBSearcher.LoadWriters(people2, crew);
-
-            Renderer.DrawTitle();
-            Console.WriteLine();
-
-            "Title : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
-            title.Key.ToString().Print(ConsoleColor.White);
-            Console.WriteLine();
-            title.Value?.Print();
-            Console.WriteLine();
-
-            "Director(s) : ".Print(
-                    ConsoleColor.Red,
-                    ConsoleColor.Black,
-                    false);
-            directors.Print(ConsoleColor.White);
-
-            "Writer(s) : ".Print(
-                    ConsoleColor.Red,
-                    ConsoleColor.Black,
-                    false);
-            writers.Print(ConsoleColor.White);
-
-            Console.WriteLine();
-            cast.Print(ConsoleColor.White);
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            "Press [Enter] To Continue...".Print(ConsoleColor.Red);
-
-            Console.ReadLine();
+            Renderer.PrintTitleSpecs(
+                title,
+                IMDBSearcher.LoadCast(people2, principals),
+                IMDBSearcher.LoadDirectors(people2, crew),
+                IMDBSearcher.LoadWriters(people2, crew));
         }
 
-        protected virtual void DrawPersonSearchMenu(SearchType searchType)
+        private void DrawPersonSearchMenu(
+            SearchType searchType)
         {
             IPrintable textBox;
             List<string[]> options;
@@ -431,7 +404,7 @@ namespace LP2___Projeto_1
             Renderer.DrawTitle();
         }
 
-        protected virtual void PrintNameResults(
+        private void PrintNameResults(
             Person[] people)
         {
             List<string[]> options = new List<string[]>();
@@ -524,26 +497,18 @@ namespace LP2___Projeto_1
                 );
         }
 
-        protected virtual void PrintNameSpecs(Person person)
+        private void PrintNameSpecs(
+            Person person)
         {
-            IDictionary<string, Title> values = IMDBSearcher.LoadTitles(person);
+            IDictionary<string, Title> values =
+                IMDBSearcher.LoadTitles(person);
 
-            Renderer.DrawTitle();
-
-            Console.WriteLine();
-            person.Print();
-            Console.WriteLine();
-            "Known For Titles : ".Print(ConsoleColor.Yellow);
-            if (values != null)
-                values.Print(ConsoleColor.White);
-
-            Console.WriteLine();
-            "Press [Enter] To Continue...".Print(ConsoleColor.Red);
-
-            Console.ReadLine();
+            Renderer.PrintNameSpecs(
+                person, 
+                values);
         }
 
-        protected virtual void DrawTitlesMenu()
+        private void DrawTitlesMenu()
         {
             string[] options = new string[]
                 {
@@ -598,7 +563,7 @@ namespace LP2___Projeto_1
                 () => { });
         }
 
-        protected virtual void DrawPeopleMenu()
+        private void DrawPeopleMenu()
         {
             string[] options = new string[]
                 {
@@ -645,7 +610,7 @@ namespace LP2___Projeto_1
                 () => { });
         }
 
-        protected virtual void DrawMainMenu()
+        private void DrawMainMenu()
         {
             string[] options = new string[]
                 {

@@ -182,5 +182,62 @@ namespace LP2___Projeto_1
                 }
             }
         }
+
+        public void PrintTitleSpecs(
+            KeyValuePair<Title, Rating> title,
+            IDictionary<Person, Principal> cast,
+            IEnumerable<Person> directors,
+            IEnumerable<Person> writers)
+        {
+            DrawTitle();
+            Console.WriteLine();
+
+            "Title : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+            title.Key.ToString().Print(ConsoleColor.White);
+            Console.WriteLine();
+            title.Value?.Print();
+            Console.WriteLine();
+
+            "Director(s) : ".Print(
+                    ConsoleColor.Red,
+                    ConsoleColor.Black,
+                    false);
+            directors.Print(ConsoleColor.White);
+
+            "Writer(s) : ".Print(
+                    ConsoleColor.Red,
+                    ConsoleColor.Black,
+                    false);
+            writers.Print(ConsoleColor.White);
+
+            Console.WriteLine();
+            cast.Print(ConsoleColor.White);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            "Press [Enter] To Continue...".Print(ConsoleColor.Red);
+
+            Console.ReadLine();
+        }
+
+        public void PrintNameSpecs(
+            Person person,
+            IDictionary<string, Title> knownForTitles)
+        {
+            DrawTitle();
+
+            Console.WriteLine();
+            person.Print();
+            Console.WriteLine();
+            "Known For Titles : ".Print(ConsoleColor.Yellow);
+            if (knownForTitles != null)
+                knownForTitles.Print(ConsoleColor.White);
+
+            Console.WriteLine();
+            "Press [Enter] To Continue...".Print(ConsoleColor.Red);
+
+            Console.ReadLine();
+        }
     }
 }

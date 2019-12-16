@@ -22,5 +22,13 @@ namespace LP2___Projeto_1
             int totalElements,
             string title
             );
+        void PrintTitleSpecs(
+            KeyValuePair<Title, Rating> title,
+            IDictionary<Person, Principal> cast,
+            IEnumerable<Person> directors,
+            IEnumerable<Person> writers);
+        void PrintNameSpecs(
+            Person person,
+            IDictionary<string, Title> knownForTitles);
     }
 }
