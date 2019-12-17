@@ -4,11 +4,6 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
-    public interface IMenu
-    {
-        void MainLoop();
-    }
-
     sealed public class Menu : IMenu
     {
         private IMDBSearcher IMDBSearcher { get; }
