@@ -2,10 +2,20 @@
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// The Class for Rating
+    /// </summary>
     public class Rating : IMDBObject
     {
+        /// <summary>
+        /// Rating ID
+        /// </summary>
         public override string ID => 
             Line.ConvertToString().Split("\t")[0];
+        
+        /// <summary>
+        /// Returns Average Rating (if available)
+        /// </summary>
         public virtual float? AvarageRating
         {
             get
@@ -18,6 +28,10 @@ namespace LP2___Projeto_1
                 return avarage;
             }
         }
+
+        /// <summary>
+        /// Returns Number of Votes (if available)
+        /// </summary>
         public virtual uint? NumberOfVotes
         {
             get
@@ -31,11 +45,18 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Constructor, Recieves Line from Database
+        /// </summary>
+        /// <param name="line">Line from Database</param>
         public Rating(string line)
         {
             Line = line.ToCharArray();
         }
 
+        /// <summary>
+        /// Print's available Rating and Number of Votes information
+        /// </summary>
         public void Print()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -52,6 +73,11 @@ namespace LP2___Projeto_1
                 NumberOfVotes.Value.ToString());
         }
 
+        /// <summary>
+        /// Parses Rating from Database Line
+        /// </summary>
+        /// <param name="line">Database Line</param>
+        /// <returns>Rating</returns>
         public static Rating Parse(string line)
         {
             //0          1              2            

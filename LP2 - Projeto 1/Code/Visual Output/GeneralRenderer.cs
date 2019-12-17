@@ -5,7 +5,7 @@ using System.Linq;
 namespace LP2___Projeto_1
 {
     /// <summary>
-    /// Works do display information on screen
+    /// Works to display information on screen
     /// </summary>
     public abstract class GeneralRenderer : IMenuRenderer
     {
@@ -23,7 +23,10 @@ namespace LP2___Projeto_1
 '####: ##:::: ##: ########:: ########::. ######:: ########: ##:::: ##: ##:::. ##:. ######:: ##:::: ##: ########: ##:::. ##:
 ....::..:::::..::........:::........::::......:::........::..:::::..::..:::::..:::......:::..:::::..::........::..:::::..::";
 
-
+        /// <summary>
+        /// Draws Title
+        /// </summary>
+        /// <param name="color">foreground Color</param>
         public void DrawTitle(
             ConsoleColor color = ConsoleColor.Red)
         {
@@ -35,12 +38,23 @@ namespace LP2___Projeto_1
             Console.ForegroundColor = tempColor;
         }
 
+        /// <summary>
+        /// Draw Loading Screen
+        /// </summary>
         public void DrawLoading()
         {
             Console.WriteLine();
             Console.WriteLine("Loading...");
         }
 
+        /// <summary>
+        /// Draws Menu
+        /// </summary>
+        /// <param name="title">Menu Title</param>
+        /// <param name="size">Menu Size</param>
+        /// <param name="options">Menu Options</param>
+        /// <param name="onEnter">On 'Enter' key Function</param>
+        /// <param name="onEscape">On 'Escape' key Function</param>
         public void DrawMenu(
            string title,
            Rect size,
@@ -85,6 +99,14 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Draw Results Menu
+        /// </summary>
+        /// <param name="onIteration">On Iteration CallBack Function</param>
+        /// <param name="onDraw">On 'Menu Draw' CallBack Function</param>
+        /// <param name="onKeyPress">On 'KeyPress' CallBack Function</param>
+        /// <param name="totalElements">Menu Total Options Count</param>
+        /// <param name="title">Menu Title</param>
         public void DrawResults(
             Action<IPrintable, int, int> onIteration,
             Func<IPrintable, int, int, int> onDraw,
@@ -183,6 +205,13 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Draw Title Specifications
+        /// </summary>
+        /// <param name="title">Value Containing Title and Rating</param>
+        /// <param name="cast">Dictionary of Principals</param>
+        /// <param name="directors">Enumerable of Directors</param>
+        /// <param name="writers">Enumerable of Writers</param>
         public void DrawTitleSpecs(
             KeyValuePair<Title, Rating> title,
             IDictionary<Person, Principal> cast,
@@ -221,6 +250,14 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Draw Episode Specifications
+        /// </summary>
+        /// <param name="episode">Value Containing Episode</param>
+        /// <param name="title">Value Containing Title and Rating</param>
+        /// <param name="cast">Dictionary of Principals</param>
+        /// <param name="directors">Enumerable of Directors</param>
+        /// <param name="writers">Enumerable of Writers</param>
         public void DrawEpisodeSpecs(
             KeyValuePair<string, Episode> episode,
             KeyValuePair<Title, Rating> title,
@@ -264,6 +301,16 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Draw Title Specifications
+        /// </summary>
+        /// <param name="title">Value Containing Title and Rating of 
+        /// Series</param>
+        /// <param name="episodeParent">Value Containing Title and 
+        /// Rating of Episode Parent</param>
+        /// <param name="cast">Dictionary of Principals</param>
+        /// <param name="directors">Enumerable of Directors</param>
+        /// <param name="writers">Enumerable of Writers</param>
         public void DrawTitleSpecs(
            KeyValuePair<Title, Rating> title,
            KeyValuePair<Title, Rating>? episodeParent,
@@ -312,6 +359,11 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Draw Person Specifications
+        /// </summary>
+        /// <param name="person">Person being Examined</param>
+        /// <param name="knownForTitles">Dictionary of Titles</param>
         public void DrawNameSpecs(
             Person person,
             IDictionary<string, Title> knownForTitles)

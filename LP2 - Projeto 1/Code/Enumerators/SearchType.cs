@@ -1,5 +1,8 @@
 ﻿namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Type of Search
+    /// </summary>
     public enum SearchType : byte
     {
         Type = 0,

@@ -5,6 +5,10 @@ using System.IO.Compression;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Has methods for reading files
+    /// </summary>
+    /// <typeparam name="T">IIMDB value</typeparam>
     public class IMDBFileReader<T> : IIMDBReader<T> where T : IIMDBValue
     {
         private string Filename { get; }
@@ -14,6 +18,12 @@ namespace LP2___Projeto_1
             Filename = filename;
         }
 
+        /// <summary>
+        /// In the method Parse, the line gets searched for its type 
+        /// information
+        /// </summary>
+        /// <param name="line">Database line being interpreted</param>
+        /// <returns>Returns IIMDBValue</returns>        
         public virtual T Parse(string line)
         {
             IIMDBValue obj = null;
@@ -34,6 +44,10 @@ namespace LP2___Projeto_1
             return (T)obj;
         }
 
+        /// <summary>
+        /// Returns number of lines in selected file
+        /// </summary>
+        /// <returns>Number of Lines in Selected File</returns>
         public virtual int LineCount()
         {
             int count = 0;
@@ -55,6 +69,12 @@ namespace LP2___Projeto_1
             return count;
         }
 
+        /// <summary>
+        /// Decompresses and Reads File
+        /// </summary>
+        /// <param name="onRead"> Method to call for each line of the 
+        /// table </param>
+        /// <returns>Enumerable of 'IIMDBValue'</returns>
         public virtual IEnumerable<T> Read(Action<int> onRead)
         {
             using (FileStream fs = new FileStream(

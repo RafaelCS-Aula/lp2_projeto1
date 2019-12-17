@@ -7,16 +7,30 @@ using System.IO.Compression;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Has methods for searching database files
+    /// </summary>
     public class IMDBSearcher
     {
-        private readonly string fileTitleBasics     = "title.basics.tsv.gz";
-        private readonly string peopleFilename      = "name.basics.tsv.gz";
-        private readonly string crewFilename        = "title.crew.tsv.gz";
-        private readonly string ratingsFilename     = "title.ratings.tsv.gz";
-        private readonly string principalsFilename  = "title.principals.tsv.gz";
-        private readonly string episodesFilename    = "title.episode.tsv.gz";
+        private readonly string fileTitleBasics     = 
+            "title.basics.tsv.gz";
+        private readonly string peopleFilename      = 
+            "name.basics.tsv.gz";
+        private readonly string crewFilename        = 
+            "title.crew.tsv.gz";
+        private readonly string ratingsFilename     = 
+            "title.ratings.tsv.gz";
+        private readonly string principalsFilename  = 
+            "title.principals.tsv.gz";
+        private readonly string episodesFilename    = 
+            "title.episode.tsv.gz";
 
+        // Database's Folder Name
         public string AppName { get; set; }
+
+        /// <summary>
+        /// Identifies Path for Folder with Database
+        /// </summary>
         protected virtual string FolderWithFiles
         {
             get =>
@@ -47,17 +61,26 @@ namespace LP2___Projeto_1
         public ISet<string> Types { get; } = new HashSet<string>();
         public ISet<string> Professions { get; } = new HashSet<string>();
 
+        /// <summary>
+        /// Starts App
+        /// </summary>
+        /// <param name="appName"> Database's Folder Name </param>
         public IMDBSearcher(string appName)
         {
             AppName = appName;
             LoadBasics();
         }
 
+        /// <summary>
+        /// Loads Episodes from Database
+        /// </summary>
+        /// <param name="title">Title in Database</param>
+        /// <returns>Episodes from Database</returns>
         public virtual IDictionary<string, Episode> LoadEpisodes(
             Title title)
         {
-            IIMDBReader<Episode> episodeReader
-                            = new IMDBFileReader<Episode>(FileEpisodesBasicsFull);
+            IIMDBReader<Episode> episodeReader = new IMDBFileReader<Episode>(
+                FileEpisodesBasicsFull);
 
             if (EpisodeLineCount == 0)
                 EpisodeLineCount = episodeReader.LineCount();
@@ -72,11 +95,17 @@ namespace LP2___Projeto_1
                     progress = e;
                     ((ProgressBar)progressBar).Progress =
                             (float)progress / (float)count;
-                }).Where(x => x.Parent.Contains(title.ID))
+                }).Where(x => x.ParentID.Contains(title.ID))
             .GroupBy(x => x.ID)
             .ToDictionary(t => t.Key, t => t.First());
         }
 
+        /// <summary>
+        /// Loads Titles and Ratings
+        /// </summary>
+        /// <param name="searchType">Search Type chosen by User</param>
+        /// <param name="type">Title Type</param>
+        /// <returns>Returns Titles from Database</returns>
         public virtual IDictionary<Title, Rating> LoadTitles(
            SearchType searchType,
            string type)
@@ -117,14 +146,19 @@ namespace LP2___Projeto_1
                             {
                                 ((ProgressBar)progressBar).Progress =
                                     (float)(progress + e) / (float)count;
-                            }).Where(x => values0.TryGetValue(x.ID, out Title t)),
+                            }).Where(x => values0.
+                            TryGetValue(x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                    (t, r) => new { Title = t.Value, Rating = 
+                                    r.Where(y => y.ID.Contains(t.Value.ID))
+                                    .FirstOrDefault() })
+                               .Where(x => x.Rating != null ? x.Rating.ID
+                               .Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         break;
                     case SearchType.Type:
                         IDictionary<string, Title> values1 =
@@ -143,19 +177,25 @@ namespace LP2___Projeto_1
                               {
                                   ((ProgressBar)progressBar).Progress =
                                       (float)(progress + e) / (float)count;
-                              }).Where(x => values1.TryGetValue(x.ID, out Title t)),
+                              }).Where(x => 
+                              values1.TryGetValue(x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                    (t, r) => new { Title = t.Value, Rating = 
+                                    r.Where(y => y.ID.Contains(t.Value.ID))
+                                    .FirstOrDefault() })
+                               .Where(x => x.Rating != null ? x.Rating.ID
+                               .Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
 
                         break;
 
                     case SearchType.Title:
-                        IDictionary<string, Title> values2 = titleReader.Read((int e) => {
+                        IDictionary<string, Title> values2 = 
+                            titleReader.Read((int e) => {
                             progress = e;
                             ((ProgressBar)progressBar).Progress =
                                 (float)progress / (float)count;
@@ -169,14 +209,19 @@ namespace LP2___Projeto_1
                                 {
                                     ((ProgressBar)progressBar).Progress =
                                         (float)(progress + e) / (float)count;
-                                }).Where(x => values2.TryGetValue(x.ID, out Title t)),
+                                }).Where(x => values2.TryGetValue(
+                                    x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                    (t, r) => new { Title = t.Value, 
+                                        Rating = r.Where(y => y.ID.Contains(
+                                            t.Value.ID)).FirstOrDefault() })
+                               .Where(x => x.Rating != null ? 
+                               x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         break;
 
                     case SearchType.ForAdults:
@@ -197,14 +242,20 @@ namespace LP2___Projeto_1
                                  {
                                      ((ProgressBar)progressBar).Progress =
                                         (float)(progress + e) / (float)count;
-                                 }).Where(x => values3.TryGetValue(x.ID, out Title t)),
+                                 }).Where(x => values3.TryGetValue(
+                                     x.ID, out Title t)),
                                      title => title.Key,
                                      rating => rating.ID,
-                                     (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                     (t, r) => new { Title = t.Value, 
+                                         Rating = r.Where(y => 
+                                         y.ID.Contains(t.Value.ID))
+                                         .FirstOrDefault() })
+                               .Where(x => x.Rating != null ? 
+                               x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         break;
 
                     case SearchType.StartYear:
@@ -212,7 +263,8 @@ namespace LP2___Projeto_1
                         {
                             short.TryParse(type, out short startYear);
 
-                            IDictionary<string, Title> values4 = titleReader.Read((int e) => {
+                            IDictionary<string, Title> values4 = 
+                                titleReader.Read((int e) => {
                                 progress = e;
                                 ((ProgressBar)progressBar).Progress =
                                     (float)progress / (float)count;
@@ -225,14 +277,19 @@ namespace LP2___Projeto_1
                                 {
                                     ((ProgressBar)progressBar).Progress =
                                         (float)(progress + e) / (float)count;
-                                }).Where(x => values4.TryGetValue(x.ID, out Title t)),
+                                }).Where(x => values4.TryGetValue(
+                                    x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                     (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                     (t, r) => new { Title = t.Value, 
+                                         Rating = r.Where(y => y.ID.Contains(
+                                             t.Value.ID)).FirstOrDefault() })
+                               .Where(x => x.Rating != null ?
+                               x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         }
                         catch
                         {
@@ -245,7 +302,8 @@ namespace LP2___Projeto_1
                         {
                             short.TryParse(type, out short endYear);
 
-                            IDictionary<string, Title> values5 = titleReader.Read((int e) => {
+                            IDictionary<string, Title> values5 = 
+                                titleReader.Read((int e) => {
                                 progress = e;
                                 ((ProgressBar)progressBar).Progress =
                                     (float)progress / (float)count;
@@ -257,14 +315,19 @@ namespace LP2___Projeto_1
                                 {
                                     ((ProgressBar)progressBar).Progress =
                                         (float)(progress + e) / (float)count;
-                                }).Where(x => values5.TryGetValue(x.ID, out Title t)),
+                                }).Where(x => values5.TryGetValue(
+                                    x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                    (t, r) => new { Title = t.Value, 
+                                        Rating = r.Where(y => y.ID.Contains(
+                                            t.Value.ID)).FirstOrDefault() })
+                               .Where(x => x.Rating != null ? 
+                               x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         }
                         catch
                         {
@@ -273,7 +336,8 @@ namespace LP2___Projeto_1
 
                         break;
                     case SearchType.Genre:
-                        IDictionary<string, Title> values6 = titleReader.Read((int e) => {
+                        IDictionary<string, Title> values6 = 
+                            titleReader.Read((int e) => {
                             progress = e;
                             ((ProgressBar)progressBar).Progress =
                                 (float)progress / (float)count;
@@ -286,27 +350,38 @@ namespace LP2___Projeto_1
                                  {
                                      ((ProgressBar)progressBar).Progress =
                                          (float)(progress + e) / (float)count;
-                                 }).Where(x => values6.TryGetValue(x.ID, out Title t)),
+                                 }).Where(x => values6.TryGetValue(
+                                     x.ID, out Title t)),
                                     title => title.Key,
                                     rating => rating.ID,
-                                    (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                              .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                    (t, r) => new { Title = t.Value, Rating = 
+                                    r.Where(y => y.ID.Contains(t.Value.ID))
+                                    .FirstOrDefault() })
+                              .Where(x => x.Rating != null ? 
+                              x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                               .GroupBy(t => t.Title.ID)
-                              .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                              .ToDictionary(t => t.FirstOrDefault()?.Title, t 
+                              => t.FirstOrDefault()?.Rating);
                         break;
                     case SearchType.Custom:
                         string[] options = type.Split(',');
-                        IDictionary<string, Title> values7 = titleReader.Read((int e) => {
+                        IDictionary<string, Title> values7 = 
+                            titleReader.Read((int e) => {
                             progress = e;
                             ((ProgressBar)progressBar).Progress =
                                 (float)progress / (float)count;
                         })
-                            .Where(x => x.PrimaryTitle.ToLower().Contains(options[0].ToLower()) &&
-                                        x.StartYear.ToString().ToLower().Contains(options[1].ToLower()) &&
-                                        x.EndYear.ToString().ToLower().Contains(options[2].ToLower()) &&
-                                        x.Type.ToLower().Contains(options[3].ToLower()) &&
-                                        x.Genres.Contains(options[4].ToLower(), true))
+                            .Where(x => x.PrimaryTitle.ToLower()
+                            .Contains(options[0].ToLower()) &&
+                                        x.StartYear.ToString().ToLower()
+                                        .Contains(options[1].ToLower()) &&
+                                        x.EndYear.ToString().ToLower()
+                                        .Contains(options[2].ToLower()) &&
+                                        x.Type.ToLower()
+                                        .Contains(options[3].ToLower()) &&
+                                        x.Genres
+                                        .Contains(options[4].ToLower(), true))
                             .GroupBy(x => x.ID)
                             .ToDictionary(t => t.Key, t => t.First());
                         values = values7
@@ -314,14 +389,20 @@ namespace LP2___Projeto_1
                             {
                                 ((ProgressBar)progressBar).Progress =
                                     (float)(progress + e) / (float)count;
-                            }).Where(x => values7.TryGetValue(x.ID, out Title t)),
+                            }).Where(x => values7.TryGetValue(
+                                x.ID, out Title t)),
                                             title => title.Key,
                                             rating => rating.ID,
-                                            (t, r) => new { Title = t.Value, Rating = r.Where(y => y.ID.Contains(t.Value.ID)).FirstOrDefault() })
-                               .Where(x => x.Rating != null ? x.Rating.ID.Contains(x.Title.ID) :
+                                            (t, r) => new { Title = 
+                                            t.Value, Rating = r.Where(y => 
+                                            y.ID.Contains(t.Value.ID))
+                                            .FirstOrDefault() })
+                               .Where(x => x.Rating != null ? 
+                               x.Rating.ID.Contains(x.Title.ID) :
                                            true)
                                .GroupBy(t => t.Title.ID)
-                               .ToDictionary(t => t.FirstOrDefault()?.Title, t => t.FirstOrDefault()?.Rating);
+                               .ToDictionary(t => t.FirstOrDefault()?.Title, 
+                               t => t.FirstOrDefault()?.Rating);
                         break;
                 }
             }
@@ -333,6 +414,12 @@ namespace LP2___Projeto_1
             return values;
         }
 
+        /// <summary>
+        /// Loads Names (Persons)
+        /// </summary>
+        /// <param name="searchType">Search type chosen by User</param>
+        /// <param name="type">Person Type</param>
+        /// <returns>Array of Person</returns>
         public virtual Person[] LoadNames(
             SearchType searchType,
             string type)
@@ -359,7 +446,8 @@ namespace LP2___Projeto_1
                             ((ProgressBar)progressBar).Progress =
                                 (float)e / (float)count;
                         })
-                        .Where(x => x.PrimaryName.ToLower().Contains(type.ToLower()));
+                        .Where(x => x.PrimaryName.ToLower()
+                        .Contains(type.ToLower()));
                         break;
 
                     case SearchType.BirthYear:
@@ -368,7 +456,8 @@ namespace LP2___Projeto_1
                             ((ProgressBar)progressBar).Progress =
                                 (float)e / (float)count;
                         })
-                         .Where(x => x.BirthYear.ToString().ToLower().Contains(type.ToLower()));
+                         .Where(x => x.BirthYear.ToString().ToLower()
+                         .Contains(type.ToLower()));
                         break;
 
                     case SearchType.DeathYear:
@@ -377,7 +466,8 @@ namespace LP2___Projeto_1
                             ((ProgressBar)progressBar).Progress =
                                 (float)e / (float)count;
                         })
-                       .Where(x => x.DeathYear.ToString().ToLower().Contains(type.ToLower()));
+                       .Where(x => x.DeathYear.ToString().ToLower()
+                       .Contains(type.ToLower()));
                         break;
 
                     case SearchType.Profession:
@@ -386,7 +476,8 @@ namespace LP2___Projeto_1
                             ((ProgressBar)progressBar).Progress =
                                 (float)e / (float)count;
                         })
-                        .Where(x => x.PrimaryProfessions.ToStringArray().Contains(type.ToLower(), true));
+                        .Where(x => x.PrimaryProfessions.ToStringArray()
+                        .Contains(type.ToLower(), true));
 
                         break;
                     case SearchType.Custom:
@@ -396,10 +487,14 @@ namespace LP2___Projeto_1
                             ((ProgressBar)progressBar).Progress =
                                 (float)e / (float)count;
                         })
-                        .Where(x => x.PrimaryName.ToLower().Contains(options[0].ToLower()) &&
-                                    x.BirthYear.ToString().ToLower().Contains(options[1].ToLower()) &&
-                                    x.DeathYear.ToString().ToLower().Contains(options[2].ToLower()) &&
-                                    x.PrimaryProfessions.ToStringArray().Contains(options[3].ToLower(), true));
+                        .Where(x => x.PrimaryName.ToLower()
+                        .Contains(options[0].ToLower()) &&
+                                    x.BirthYear.ToString().ToLower()
+                                    .Contains(options[1].ToLower()) &&
+                                    x.DeathYear.ToString().ToLower()
+                                    .Contains(options[2].ToLower()) &&
+                                    x.PrimaryProfessions.ToStringArray()
+                                    .Contains(options[3].ToLower(), true));
                         break;
                 }
             }
@@ -411,6 +506,11 @@ namespace LP2___Projeto_1
             return people.ToArray();
         }
 
+        /// <summary>
+        /// Loads Titles with Person chosen by User
+        /// </summary>
+        /// <param name="person">Person Type</param>
+        /// <returns>Dictionary of Titles</returns>
         public virtual IDictionary<string, Title> LoadTitles(
             Person person)
         {
@@ -438,40 +538,61 @@ namespace LP2___Projeto_1
             return values;
         }
 
+        /// <summary>
+        /// Selects Directors from given Crew
+        /// </summary>
+        /// <param name="people"> People's Database </param>
+        /// <param name="crew">People's profession</param>
+        /// <returns>Enumerable of Person</returns>
         public virtual IEnumerable<Person> LoadDirectors(
             IDictionary<string, Person> people,
-            IDictionary<string, Crew> crew)
-        {
-            return people
-               .Where(x => crew.Select(y => y.Value.DirectorsID).Any(v => v.Contains(x.Key)))
+            IDictionary<string, Crew> crew) => people
+               .Where(x => crew.Select(y => 
+               y.Value.DirectorsID).Any(v => v.Contains(x.Key)))
                .Select(x => x.Value);
-        }
-
+        
+        /// <summary>
+        /// Selects Writers from given Crew
+        /// </summary>
+        /// <param name="people"> People's Database </param>
+        /// <param name="crew">People's profession</param>
+        /// <returns>Enumerable of Person</returns>
         public virtual IEnumerable<Person> LoadWriters(
             IDictionary<string, Person> people,
-            IDictionary<string, Crew> crew)
-        {
-            return people
-                .Where(x => crew.Select(y => y.Value.WritersID).Any(v => v.Contains(x.Key)))
+            IDictionary<string, Crew> crew) => people
+                .Where(x => crew.Select(y => 
+                y.Value.WritersID).Any(v => v.Contains(x.Key)))
                 .Select(x => x.Value);
-        }
 
+        /// <summary>
+        /// Joins principals to People's dictionary
+        /// </summary>
+        /// <param name="people">People Dictionary</param>
+        /// <param name="principals">Principal's Dictionary</param>
+        /// <returns>Dictionary of Person and Principal</returns>
         public virtual IDictionary<Person, Principal> LoadCast(
             IDictionary<string, Person> people,
-            IDictionary<string, Principal> principals)
-        {
-            return people.Join(principals.Select(x => x.Value),
+            IDictionary<string, Principal> principals) => 
+            people.Join(principals.Select(x => x.Value),
                                  person => person.Key,
                                  principal => principal.PersonID,
-                                 (p1, p2) => new { Person = p1.Value, Principal = p2 })
+                                 (p1, p2) => new { 
+                                     Person = p1.Value, Principal = p2 })
                 .GroupBy(t => t.Person.ID)
-                .ToDictionary(t => t.First()?.Person, t => t.First()?.Principal);
-        }
-
-        public virtual IEnumerable<IDictionary<string, IIMDBValue>> LoadPeopleForTitle(
+                .ToDictionary(t => t.First()?.Person, t => 
+                t.First()?.Principal);
+      
+        /// <summary>
+        /// Selects the People, Principals, Crew from the Title
+        /// </summary>
+        /// <param name="title">Title chosen by User</param>
+        /// <returns>Enumerable of Dictionaries of IIMDBValue</returns>
+        public virtual IEnumerable<IDictionary<string, IIMDBValue>> 
+            LoadPeopleForTitle(
             KeyValuePair<Title, Rating> title)
         {
-            ProgressBar progressBar = new ProgressBar(new Rect(12, 10, 104, 1));
+            ProgressBar progressBar = 
+                new ProgressBar(new Rect(12, 10, 104, 1));
 
             IIMDBReader<Crew> crewReader =
                 new IMDBFileReader<Crew>(FileCrewsBasicsFull);
@@ -503,7 +624,8 @@ namespace LP2___Projeto_1
                        principalReader.Read((int e) =>
                        {
                            progress++;
-                           progressBar.Progress = (float)progress / (float)count;
+                           progressBar.Progress = 
+                           (float)progress / (float)count;
                        })
                        .Where(x => x.ID.Contains(title.Key.ID))
                        .GroupBy(t => t.PersonID)
@@ -537,21 +659,33 @@ namespace LP2___Projeto_1
                     progressBar.Progress = (float)progress / (float)count;
                 })
                 .Where(x => principals.TryGetValue(x.ID, out Principal p) ||
-                            crew.Select(y => y.Value.DirectorsID).Any(y => y.Contains(x.ID)) ||
-                            crew.Select(y => y.Value.WritersID).Any(y => y.Contains(x.ID)))
+                            crew.Select(y => 
+                            y.Value.DirectorsID).Any(y => y.Contains(x.ID)) ||
+                            crew.Select(y => 
+                            y.Value.WritersID).Any(y => y.Contains(x.ID)))
                 .ToDictionary(t => t.ID, t => t);
 
             return new IDictionary<string, IIMDBValue>[3]
                 {
-                    crew.ToDictionary(t => t.Key, t => (IIMDBValue)t.Value),
-                    principals.ToDictionary(t => t.Key, t => (IIMDBValue)t.Value),
-                    people.ToDictionary(t => t.Key, t => (IIMDBValue)t.Value)
+                    crew.ToDictionary(t => t.Key, t => 
+                    (IIMDBValue)t.Value),
+                    principals.ToDictionary(t => t.Key, t => 
+                    (IIMDBValue)t.Value),
+                    people.ToDictionary(t => t.Key, t => 
+                    (IIMDBValue)t.Value)
                 };
         }
 
-        public virtual KeyValuePair<Title, Rating>? LoadEpisodeTitle(Title title)
+        /// <summary>
+        /// Loads Episode Information from Title
+        /// </summary>
+        /// <param name="title">Title selected by User</param>
+        /// <returns>Value containing Title and Rating</returns>
+        public virtual KeyValuePair<Title, Rating>? 
+            LoadEpisodeTitle(Title title)
         {
-            ProgressBar progressBar = new ProgressBar(new Rect(12, 10, 104, 1));
+            ProgressBar progressBar = 
+                new ProgressBar(new Rect(12, 10, 104, 1));
 
             IIMDBReader<Episode> episodeReader =
                 new IMDBFileReader<Episode>(FileEpisodesBasicsFull);
@@ -575,9 +709,14 @@ namespace LP2___Projeto_1
             return 
                 LoadTitles(
                     SearchType.Episode, 
-                    episodes.FirstOrDefault().Parent).FirstOrDefault();
+                    episodes.FirstOrDefault().ParentID).FirstOrDefault();
         }
 
+        /// <summary>
+        /// Counts File Line Count
+        /// </summary>
+        /// <param name="filename">File's full name</param>
+        /// <returns>Returns Number of Lines</returns>
         protected virtual int LineCount(string filename)
         {
             int count = 0;
@@ -585,6 +724,11 @@ namespace LP2___Projeto_1
             return count;
         }
 
+        /// <summary>
+        /// Executes action for each line from File
+        /// </summary>
+        /// <param name="filename">File full name</param>
+        /// <param name="action">Action for each line</param>
         protected virtual void Read(string filename, Action<string> action)
         {
             using (FileStream fs = new FileStream(
@@ -604,9 +748,13 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Loads Genres, Types Professions from Database
+        /// </summary>
         protected virtual void LoadBasics()
         {
-            ProgressBar progressBar = new ProgressBar(new Rect(12, 10, 104, 1));
+            ProgressBar progressBar = 
+                new ProgressBar(new Rect(12, 10, 104, 1));
 
             int progress = 0;
             int count = 0;

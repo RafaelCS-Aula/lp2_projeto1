@@ -9,10 +9,15 @@ namespace LP2___Projeto_1
     /// </summary>
     sealed class MenuDrawer : GeneralRenderer, IMenu
     {
-        ResultsPrinter rP;
+        private ResultsPrinter rP;
+        
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="resultPrt">Instance of ResultsPrinter</param>
+        /// <param name="searcher">Instance of IMDBSearcher</param>
         public MenuDrawer(ResultsPrinter resultPrt, IMDBSearcher searcher)
         {
-            //Renderer = renderer;
             DrawTitle();
             DrawLoading();
             rP = resultPrt;
@@ -20,6 +25,10 @@ namespace LP2___Projeto_1
             
         }
 
+        /// <summary>
+        /// Draws TitleSearch Menu
+        /// </summary>
+        /// <param name="searchType">Choosen Search Type</param>
         private void DrawTitleSearchMenu(
             SearchType searchType)
         {
@@ -68,7 +77,8 @@ namespace LP2___Projeto_1
                         () => { });
                     break;
                 case SearchType.StartYear:
-                    textBox = new TextBox("Start Year", new Rect(35, 13, 50, 2));
+                    textBox = 
+                        new TextBox("Start Year", new Rect(35, 13, 50, 2));
 
                     DrawTitle();
                     textBox.Print();
@@ -142,11 +152,16 @@ namespace LP2___Projeto_1
                         () => { });
                     break;
                 case SearchType.Custom:
-                    textBox = new TextBox("Primary Title", new Rect(35, 13, 50, 2));
-                    IPrintable textBox2 = new TextBox("Start Year", new Rect(35, 16, 50, 2));
-                    IPrintable textBox3 = new TextBox("End Year", new Rect(35, 19, 50, 2));
-                    IPrintable textBox4 = new TextBox("Type", new Rect(35, 22, 50, 2));
-                    IPrintable textBox5 = new TextBox("Genre", new Rect(35, 25, 50, 2));
+                    textBox = 
+                        new TextBox("Primary Title", new Rect(35, 13, 50, 2));
+                    IPrintable textBox2 = 
+                        new TextBox("Start Year", new Rect(35, 16, 50, 2));
+                    IPrintable textBox3 = 
+                        new TextBox("End Year", new Rect(35, 19, 50, 2));
+                    IPrintable textBox4 = 
+                        new TextBox("Type", new Rect(35, 22, 50, 2));
+                    IPrintable textBox5 = 
+                        new TextBox("Genre", new Rect(35, 25, 50, 2));
                     DrawTitle();
                     textBox.Print();
                     textBox2.Print();
@@ -180,6 +195,10 @@ namespace LP2___Projeto_1
             DrawTitle();
         }
 
+        /// <summary>
+        /// Draws Person Search Menu
+        /// </summary>
+        /// <param name="searchType">Choosen Search Type</param>
         private void DrawPersonSearchMenu(
             SearchType searchType)
         {
@@ -200,25 +219,27 @@ namespace LP2___Projeto_1
                     rP.PrintNameResults(people);
                     break;
                 case SearchType.BirthYear:
-                    textBox = new TextBox("Birth Year", new Rect(35, 13, 50, 2));
+                    textBox = 
+                        new TextBox("Birth Year", new Rect(35, 13, 50, 2));
                     DrawTitle();
                     textBox.Print();
                     string birthYear = ((TextBox)textBox).Get();
                     DrawTitle();
                     DrawLoading();
-                    people =
-                        IMDBSearcher.LoadNames(SearchType.BirthYear, birthYear);
+                    people = IMDBSearcher
+                        .LoadNames(SearchType.BirthYear, birthYear);
                     rP.PrintNameResults(people);
                     break;
                 case SearchType.DeathYear:
-                    textBox = new TextBox("Death Year", new Rect(35, 13, 50, 2));
+                    textBox = 
+                        new TextBox("Death Year", new Rect(35, 13, 50, 2));
                     DrawTitle();
                     textBox.Print();
                     string deathYear = ((TextBox)textBox).Get();
                     DrawTitle();
                     DrawLoading();
-                    people =
-                        IMDBSearcher.LoadNames(SearchType.DeathYear, deathYear);
+                    people = IMDBSearcher
+                        .LoadNames(SearchType.DeathYear, deathYear);
                     rP.PrintNameResults(people);
                     break;
                 case SearchType.Profession:
@@ -255,9 +276,12 @@ namespace LP2___Projeto_1
                     break;
                 case SearchType.Custom:
                     textBox = new TextBox("Name", new Rect(35, 13, 50, 2));
-                    IPrintable textBox2 = new TextBox("Birth Year", new Rect(35, 16, 50, 2));
-                    IPrintable textBox3 = new TextBox("Death Year", new Rect(35, 19, 50, 2));
-                    IPrintable textBox4 = new TextBox("Profession", new Rect(35, 22, 50, 2));
+                    IPrintable textBox2 = 
+                        new TextBox("Birth Year", new Rect(35, 16, 50, 2));
+                    IPrintable textBox3 = 
+                        new TextBox("Death Year", new Rect(35, 19, 50, 2));
+                    IPrintable textBox4 = 
+                        new TextBox("Profession", new Rect(35, 22, 50, 2));
                     DrawTitle();
                     textBox.Print();
                     textBox2.Print();
@@ -288,6 +312,9 @@ namespace LP2___Projeto_1
             DrawTitle();
         }
 
+        /// <summary>
+        /// Draws Title SearchType Menu
+        /// </summary>
         private void DrawTitlesMenu()
         {
             string[] options = new string[]
@@ -343,6 +370,9 @@ namespace LP2___Projeto_1
                 () => { });
         }
 
+        /// <summary>
+        /// Draws People Menu
+        /// </summary>
         private void DrawPeopleMenu()
         {
             string[] options = new string[]
@@ -390,6 +420,9 @@ namespace LP2___Projeto_1
                 () => { });
         }
 
+        /// <summary>
+        /// Draws MainMenu
+        /// </summary>
         private void DrawMainMenu()
         {
             string[] options = new string[]
@@ -428,6 +461,9 @@ namespace LP2___Projeto_1
                 () => { });
         }
 
+        /// <summary>
+        /// Calls DrawMainMenu
+        /// </summary>
         public void MainLoop()
         {
             DrawMainMenu();

@@ -2,17 +2,28 @@
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Class for TextBox
+    /// </summary>
     sealed public class TextBox : IPrintable
     {
         public string Label { get; }
         public Rect Size { get; }
 
+        /// <summary>
+        /// Constructor, Sets Text Name and Dimensions
+        /// </summary>
+        /// <param name="label">Text to appear before TextBox</param>
+        /// <param name="size">textBox Size</param>
         public TextBox(string label, Rect size)
         {
             Label = label;
             Size = size;
         }
 
+        /// <summary>
+        /// Prints TextBox
+        /// </summary>
         public void Print()
         {
             Console.CursorLeft = Size.X - Label.Length - 1;
@@ -40,6 +51,10 @@ namespace LP2___Projeto_1
             Console.CursorTop = Size.Y + 1;
         }
 
+        /// <summary>
+        /// Gets User Input
+        /// </summary>
+        /// <returns>User Input</returns>
         public string Get()
         {
             Console.CursorTop = Size.Y + 1;

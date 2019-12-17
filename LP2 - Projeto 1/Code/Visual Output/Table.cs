@@ -4,13 +4,23 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Class for Table
+    /// </summary>
     sealed public class Table : IPrintable
     {
+        /// <summary>
+        /// Class for Columns
+        /// </summary>
         public class Column
         {
             public string Header { get; set; }
             public Rect Size { get; set; }
 
+            /// <summary>
+            /// Constructor, Sets Column Size 
+            /// </summary>
+            /// <param name="size">Size of Column</param>
             public Column(Rect size)
             {
                 Size = size;
@@ -19,6 +29,9 @@ namespace LP2___Projeto_1
 
         private IEnumerable<IEnumerable<string>> options;
 
+        /// <summary>
+        /// Options in Table
+        /// </summary>
         public IEnumerable<IEnumerable<string>> Options
         {
             get => options;
@@ -40,12 +53,39 @@ namespace LP2___Projeto_1
                 }
             }
         }
+
+        /// <summary>
+        /// Table Title
+        /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// Table Dimensions
+        /// </summary>
         public Rect Size { get; }
+
+        /// <summary>
+        /// Table Columns
+        /// </summary>
         public Column[] Columns { get; private set; }
+
+        /// <summary>
+        /// Table Current Selection
+        /// </summary>
         public int Selection { get; set; }
+
+        /// <summary>
+        /// Alternate Color
+        /// </summary>
         public bool Interleave { get; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="title">Title</param>
+        /// <param name="options">Table Options</param>
+        /// <param name="size">Table Size</param>
+        /// <param name="interleave">Alternate Color</param>
         public Table(
             string title, 
             IEnumerable<IEnumerable<string>> options, 
@@ -58,6 +98,9 @@ namespace LP2___Projeto_1
             Interleave = interleave;
         }
 
+        /// <summary>
+        /// Clears Table
+        /// </summary>
         public void Clear()
         {
             Console.CursorLeft = Size.X + (Size.Width / 2) - Title.Length / 2;
@@ -72,6 +115,9 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Prints Table
+        /// </summary>
         public void Print()
         {
             Console.CursorLeft = Size.X + (Size.Width / 2) - Title.Length / 2;

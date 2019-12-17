@@ -3,6 +3,9 @@
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Class for ProgressBar
+    /// </summary>
     public class ProgressBar : IPrintable
     {
         private float progress;
@@ -16,16 +19,24 @@ namespace LP2___Projeto_1
             set
             {
                 progress = Math.Min(value, 1);
-                if (progress > (float)((float)PrintProgress / (float)Size.Width))
+                if (progress > (float)(
+                    (float)PrintProgress / (float)Size.Width))
                     Print();
             }
         }
 
+        /// <summary>
+        /// Constructor, Sets ProgressBar Size
+        /// </summary>
+        /// <param name="size">ProgressBar Size</param>
         public ProgressBar(Rect size)
         {
             Size = size;
         }
 
+        /// <summary>
+        /// Prints ProgressBar
+        /// </summary>
         public void Print()
         {
             Console.CursorLeft = Size.X;

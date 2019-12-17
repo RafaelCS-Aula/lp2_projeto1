@@ -3,8 +3,17 @@ using System.Collections.Generic;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Class for Dictionary Extensions
+    /// </summary>
     public static class DictionaryExtensions
     {
+        /// <summary>
+        /// Prints Principal
+        /// </summary>
+        /// <param name="people">Principal People Dictionary</param>
+        /// <param name="foreColor">Foreground Color</param>
+        /// <param name="backColor">Background Color</param>
         public static void Print(
            this IDictionary<Person, Principal> people,
            ConsoleColor foreColor,
@@ -48,6 +57,12 @@ namespace LP2___Projeto_1
             }
         }
 
+        /// <summary>
+        /// Prints Titles
+        /// </summary>
+        /// <param name="titles">Title Dictionary</param>
+        /// <param name="foreColor">Foreground Color</param>
+        /// <param name="backColor">Background Color</param>
         public static void Print(
            this IDictionary<string, Title> titles,
            ConsoleColor foreColor,
@@ -60,7 +75,8 @@ namespace LP2___Projeto_1
                     name = name.Substring(0, 45) + "...";
                 name.Print(foreColor, backColor, false);
                 Console.CursorLeft = 48;
-                title.Value.StartYear.ToString().Print(foreColor, backColor, false);
+                title.Value.StartYear.ToString()
+                    .Print(foreColor, backColor, false);
                 Console.CursorLeft = 58;
                 title.Value.Type.Print(foreColor, backColor, false);
                 Console.CursorLeft = 80;

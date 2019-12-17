@@ -7,14 +7,22 @@ namespace LP2___Projeto_1
     /// <summary>
     /// Responsible for printing the results of searches
     /// </summary>
-    sealed class ResultsPrinter : GeneralRenderer
+    class ResultsPrinter : GeneralRenderer
     {
+        /// <summary>
+        /// Constructor, instances IMDBSearcher
+        /// </summary>
+        /// <param name="searcher">Given IMDBSearcher</param>
         public ResultsPrinter(IMDBSearcher searcher)
         {
             IMDBSearcher = searcher;
         }
 
-        public void PrintTitleResults(
+        /// <summary>
+        /// Prints Search Results for Titles
+        /// </summary>
+        /// <param name="filteredTitles">Dictionary of Titles</param>
+        public virtual void PrintTitleResults(
             IDictionary<Title, Rating> filteredTitles)
         {
             List<KeyValuePair<Title, Rating>> titles = filteredTitles.ToList();
@@ -76,19 +84,23 @@ namespace LP2___Projeto_1
                         Console.WriteLine(' '.Repeat(Console.BufferWidth));
 
                     Console.CursorTop = 33;
-                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+                    "Selection : ".Print(
+                        ConsoleColor.Red, ConsoleColor.Black, false);
                     titles[selection].Key.ToString().Print();
 
                     Console.CursorTop = 35;
-                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
-                    Console.WriteLine("a - By Name\ts - By Year\td - By Classification");
+                    "Sorting : ".Print(
+                        ConsoleColor.Yellow, ConsoleColor.Black, false);
+                    Console.WriteLine(
+                        "a - By Name\ts - By Year\td - By Classification");
 
                     return counter;
                 },
                 onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
                 {
                     if (keyInfo.Key == ConsoleKey.A)
-                        titles = titles.Sort(x => x.Key.PrimaryTitle.ConvertToString());
+                        titles = titles
+                        .Sort(x => x.Key.PrimaryTitle.ConvertToString());
                     else if (keyInfo.Key == ConsoleKey.S)
                         titles = titles.Sort(x => x.Key.StartYear);
                     else if (keyInfo.Key == ConsoleKey.D)
@@ -109,11 +121,17 @@ namespace LP2___Projeto_1
                 );
         }
         
-        private void PrintEpisodeResults(
+        /// <summary>
+        /// Prints Search Results for Episodes
+        /// </summary>
+        /// <param name="filteredEpisodes">Dictionary of Episodes</param>
+        /// <param name="title">Searched Title</param>
+        protected virtual void PrintEpisodeResults(
            IDictionary<string, Episode> filteredEpisodes,
            KeyValuePair<Title, Rating> title)
         {
-            List<KeyValuePair<string, Episode>> episodes = filteredEpisodes.ToList();
+            List<KeyValuePair<string, Episode>> episodes = 
+                filteredEpisodes.ToList();
             List<string[]> options = new List<string[]>();
             
                 DrawResults(
@@ -153,12 +171,15 @@ namespace LP2___Projeto_1
                         Console.WriteLine(' '.Repeat(Console.BufferWidth));
 
                     Console.CursorTop = 33;
-                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+                    "Selection : ".Print(
+                        ConsoleColor.Red, ConsoleColor.Black, false);
                     episodes[selection].Value.ToString().Print();
 
                     Console.CursorTop = 35;
-                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
-                    Console.WriteLine("a - By Name\ts - By Year\td - By Classification");
+                    "Sorting : ".Print(
+                        ConsoleColor.Yellow, ConsoleColor.Black, false);
+                    Console.WriteLine(
+                        "a - By Name\ts - By Year\td - By Classification");
 
                     return counter;
                 },
@@ -179,18 +200,26 @@ namespace LP2___Projeto_1
                 );
         }                
 
-        public void PrintEpisodeSpecs(
+        /// <summary>
+        /// Prints Episode Specifications
+        /// </summary>
+        /// <param name="episode">Chosen Episode</param>
+        /// <param name="title">Episode's Title and Rating</param>
+        public virtual void PrintEpisodeSpecs(
             KeyValuePair<string, Episode> episode, 
             KeyValuePair<Title, Rating> title)
         {
             IEnumerable<IDictionary<string, IIMDBValue>> people =
               IMDBSearcher.LoadPeopleForTitle(title);
             IDictionary<string, Crew> crew =
-                people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);
+                people.ElementAt(0)
+                .ToDictionary(t => t.Key, T => (Crew)T.Value);
             IDictionary<string, Principal> principals =
-                people.ElementAt(1).ToDictionary(t => t.Key, T => (Principal)T.Value);
+                people.ElementAt(1)
+                .ToDictionary(t => t.Key, T => (Principal)T.Value);
             IDictionary<string, Person> people2 =
-                people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
+                people.ElementAt(2)
+                .ToDictionary(t => t.Key, T => (Person)T.Value);
 
                 DrawEpisodeSpecs(
                 episode,
@@ -200,7 +229,11 @@ namespace LP2___Projeto_1
                 IMDBSearcher.LoadWriters(people2, crew));
         }
         
-        public void PrintTitleSpecs(
+        /// <summary>
+        /// Prints Title Specification
+        /// </summary>
+        /// <param name="title">Chosen Title</param>
+        public virtual void PrintTitleSpecs(
            KeyValuePair<Title, Rating> title)
         {
             if (title.Key.IsSeries)
@@ -215,15 +248,19 @@ namespace LP2___Projeto_1
             IEnumerable<IDictionary<string, IIMDBValue>> people =
                IMDBSearcher.LoadPeopleForTitle(title);
             IDictionary<string, Crew> crew =
-                people.ElementAt(0).ToDictionary(t => t.Key, T => (Crew)T.Value);
+                people.ElementAt(0)
+                .ToDictionary(t => t.Key, T => (Crew)T.Value);
             IDictionary<string, Principal> principals =
-                people.ElementAt(1).ToDictionary(t => t.Key, T => (Principal)T.Value);
+                people.ElementAt(1)
+                .ToDictionary(t => t.Key, T => (Principal)T.Value);
             IDictionary<string, Person> people2 =
-                people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
+                people.ElementAt(2)
+                .ToDictionary(t => t.Key, T => (Person)T.Value);
 
             if (title.Key.IsEpisode)
             {
-                KeyValuePair<Title, Rating>? episodeTitle = IMDBSearcher.LoadEpisodeTitle(title.Key);
+                KeyValuePair<Title, Rating>? episodeTitle = 
+                    IMDBSearcher.LoadEpisodeTitle(title.Key);
                 DrawTitleSpecs(
                     title,
                     episodeTitle,
@@ -241,7 +278,11 @@ namespace LP2___Projeto_1
             }
         }
 
-        public void PrintNameResults(
+        /// <summary>
+        /// Prints Name Search Results
+        /// </summary>
+        /// <param name="people">Enumerator of People</param>
+        public virtual void PrintNameResults(
             Person[] people)
         {
             List<string[]> options = new List<string[]>();
@@ -305,19 +346,23 @@ namespace LP2___Projeto_1
                         Console.WriteLine(' '.Repeat(Console.BufferWidth));
 
                     Console.CursorTop = 33;
-                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+                    "Selection : ".Print(
+                        ConsoleColor.Red, ConsoleColor.Black, false);
                     people[selection].ToString().Print();
 
                     Console.CursorTop = 35;
-                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
-                    Console.WriteLine("a - By Name\ts - By Birth Year\td - By Death Year");
+                    "Sorting : ".Print(
+                        ConsoleColor.Yellow, ConsoleColor.Black, false);
+                    Console.WriteLine(
+                        "a - By Name\ts - By Birth Year\td - By Death Year");
 
                     return counter;
                 },
                 onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
                 {
                     if (keyInfo.Key == ConsoleKey.A)
-                        people = people.Sort(x => x.PrimaryName.ConvertToString()).ToArray();
+                        people = people
+                        .Sort(x => x.PrimaryName.ConvertToString()).ToArray();
                     else if (keyInfo.Key == ConsoleKey.S)
                         people = people.Sort(x => x.BirthYear).ToArray();
                     else if (keyInfo.Key == ConsoleKey.D)
@@ -335,7 +380,11 @@ namespace LP2___Projeto_1
                 );
         }
 
-        public void PrintNameSpecs(
+        /// <summary>
+        /// Prints Person Specifications
+        /// </summary>
+        /// <param name="person">Chosen Person</param>
+        public virtual void PrintNameSpecs(
             Person person)
         {
             IDictionary<string, Title> values =

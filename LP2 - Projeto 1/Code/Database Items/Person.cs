@@ -4,16 +4,26 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// The class for Person Information
+    /// </summary>
     public class Person : IMDBObject
     {
-        public override string ID
-        {
-            get => Line.ConvertToString().Split("\t")[0];
-        }
+        /// <summary>
+        /// Person ID
+        /// </summary>
+        public override string ID 
+            => Line.ConvertToString().Split("\t")[0];
+        
+        /// <summary>
+        /// Person's PrimaryName
+        /// </summary>
         public virtual string PrimaryName
-        {
-            get => Line.ConvertToString().Split("\t")[1];
-        }
+            => Line.ConvertToString().Split("\t")[1];
+        
+        /// <summary>
+        /// Returns Person Birth Year
+        /// </summary>
         public virtual short? BirthYear
         {
             get
@@ -25,6 +35,10 @@ namespace LP2___Projeto_1
                 return birthYear;
             }
         }
+
+        /// <summary>
+        /// Returns Person Death Year
+        /// </summary>
         public virtual short? DeathYear
         {
             get
@@ -36,28 +50,34 @@ namespace LP2___Projeto_1
                 return deathYear;
             }
         }
-        public virtual IEnumerable<IEnumerable<char>> PrimaryProfessions
-        {
-            get
-            {
-                return Line.ConvertToString().Split("\t")[4].Split(",")
-                    .Select(x => x.ToCharArray());
-            }
-        }
-        public virtual IEnumerable<IEnumerable<char>> KnownForTitles
-        {
-            get
-            {
-                string[] knownFor = Line.ConvertToString().Split("\t")[5].Split(",");
-                return knownFor;
-            }
-        }
 
+        /// <summary>
+        /// Returns Person Primary Professions
+        /// </summary>
+        public virtual IEnumerable<IEnumerable<char>> PrimaryProfessions
+            => Line.ConvertToString().Split("\t")[4].Split(",")
+                    .Select(x => x.ToCharArray());
+
+        /// <summary>
+        /// Returns Titles for which the Person's known for  
+        /// </summary>
+        public virtual IEnumerable<IEnumerable<char>> KnownForTitles
+            => Line.ConvertToString().Split("\t")[5].Split(",");
+        
+        /// <summary>
+        /// Constructor, Recieves line from Database
+        /// </summary>
+        /// <param name="line">Line from Database</param>
         public Person(string line)
         {
             Line = line.ToCharArray();
         }
 
+        /// <summary>
+        /// Parses Person from Database Line
+        /// </summary>
+        /// <param name="line">Line from Database</param>
+        /// <returns>Person</returns>
         public static Person Parse(string line)
         {
             //0          1             2             3              4                   5          
@@ -65,6 +85,9 @@ namespace LP2___Projeto_1
             return new Person(line);
         }
 
+        /// <summary>
+        /// Renders Person Information
+        /// </summary>
         public void FormatOutput()
         {
             "Name : ".Print(
@@ -102,6 +125,10 @@ namespace LP2___Projeto_1
                        false);
         }
 
+        /// <summary>
+        /// Returns Person Information in a String 
+        /// </summary>
+        /// <returns>Person in String</returns>
         public override string ToString()
         {
             return PrimaryName.ConvertToString() + "\t" +
