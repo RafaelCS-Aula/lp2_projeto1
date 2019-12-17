@@ -7,8 +7,10 @@ namespace LP2___Projeto_1
     /// <summary>
     /// Works do Display the various menus onscreen
     /// </summary>
-    public class MenuRenderer : IMenuRenderer
+    public abstract class GeneralRenderer : IMenuRenderer
     {
+        protected ResultsPrinter resultsPrinter;
+        
         public int MaxResults { get; set; }
 
         protected virtual string Figlet => @"
