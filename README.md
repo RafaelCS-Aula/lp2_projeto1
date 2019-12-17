@@ -8,6 +8,7 @@ Da Autoria de:
 
 - Pedro Fernandes, nº 21803791
 - Rafael Castro e Silva, nº 21903059
+- João Moreira, nº 21801608
 
 ---
 
@@ -36,11 +37,11 @@ e realizar as pesquisas nas coleções obtidas das bases de dados.
 - Depois disto o Rafael e o Pedro trataram de comentar e fazer refactoring do codigo
 para que este seja mais legivel e se aproxime mais dos principios _KISS_. O Rafael
 tratou do refactoring maior e o Pedro de comentar e executar algumas alterações
-de codigo para a qualidade do mesmo.
+de codigo para a qualidade do mesmo.No entanto a base de código tem na sua maioria 
+a autoria do João.
 
-- No entanto a base de código tem na sua maioria a autoria do João.
-
-- Fora do código, o Rafael escreveu este relatorio, o Pedro fez o _UML_.  
+- Fora do código, o Rafael e o Pedro escreveram este relatorio, 
+o Pedro fez o _UML_.  
 
 - No seu estado final para entrega, o projecto encontra-se no _branch_ `newMaster`.
 
@@ -58,4 +59,5 @@ de codigo para a qualidade do mesmo.
 
 ### Referências:
 
-- Nenhuma até ao momento.
+- API .Net
+- StackOverflow
