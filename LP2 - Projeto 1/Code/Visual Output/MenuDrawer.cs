@@ -22,6 +22,7 @@ namespace LP2___Projeto_1
             DrawLoading();
             rP = resultPrt;
             IMDBSearcher = searcher;
+            MaxResults = 15;
             
         }
 

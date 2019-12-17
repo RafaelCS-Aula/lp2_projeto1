@@ -11,7 +11,7 @@ namespace LP2___Projeto_1
     {
         protected  IMDBSearcher IMDBSearcher { get;  set; }
        
-        public int MaxResults { get; set; }
+        public int MaxResults { get; set; } = 15;
 
         protected virtual string Figlet => @"
 '####:'##::::'##:'########::'########:::'######::'########::::'###::::'########:::'######::'##::::'##:'########:'########::
