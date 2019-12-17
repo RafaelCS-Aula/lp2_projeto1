@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
-using System.Threading;
-using System.IO.Compression;
 
 namespace LP2___Projeto_1
 {

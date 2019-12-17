@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Works do Display the various menus onscreen
+    /// </summary>
     public class MenuRenderer : IMenuRenderer
     {
         public int MaxResults { get; set; } = 15;

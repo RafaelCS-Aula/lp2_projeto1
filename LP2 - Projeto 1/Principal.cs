@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-
-namespace LP2___Projeto_1
+﻿namespace LP2___Projeto_1
 {
     public class Principal : IMDBObject
     {
