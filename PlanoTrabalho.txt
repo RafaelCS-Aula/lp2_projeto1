@@ -1,0 +1,41 @@
+"Cumprimentos"
+[Tipo de Pesquisa]
+"O que pretende pesquisar?"
+	- Títulos
+	- Pessoas (Terceira Fase)
+	- Sair (Termina Programa)
+
+[Títulos]
+"Pretende continuar na pesquisa de Títulos?"
+	- Sim
+	- Não (Regressa a [Tipo de Pesquisa])
+
+[Sim]
+"Escreva o título que procura"
+-Existem títulos que respeitam o procurado?-
+	- Sim
+	- Não ("Nada na base de dados corresponde ao requesitado")
+	     1) Rescrever Título
+	     2) Regressa a [Tipo de Pesquisa]
+
+[Sim]
+[Títulos Enumerados]
+Apresenta títulos que respeitam o escrito (enumerados)
+"Encontra o que procura?"
+	- Sim
+	- Não
+	     1) Próximos 30 (pode fazer até chegar ao máximo)
+	     2) Regressar a [Títulos]
+
+[Sim]
+"Introduza o número do título que pretende"
+Apresenta informações sobre o título
+Carregue "X" para regressar a [Títulos Enumerados]
+
+------------------------------------------------------------------------
+Algoritmo para procura de títulos
+
+Suponho que podes fazer uma lista que guarda o que o user escreveu para
+procurar e depois pode-se fazer um loop com recorrência em que vais 
+acrescentando uma letra ao que procuras, comparando com a lista feita 
+anteriormente?
