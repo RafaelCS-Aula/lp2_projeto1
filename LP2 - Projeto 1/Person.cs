@@ -65,7 +65,7 @@ namespace LP2___Projeto_1
             return new Person(line);
         }
 
-        public void Print()
+        public void FormatOutput()
         {
             "Name : ".Print(
                 ConsoleColor.Yellow,

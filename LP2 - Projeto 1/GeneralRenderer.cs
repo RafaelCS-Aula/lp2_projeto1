@@ -319,7 +319,7 @@ namespace LP2___Projeto_1
             DrawTitle();
 
             Console.WriteLine();
-            person.Print();
+            person.FormatOutput();
             Console.WriteLine();
             "Known For Titles : ".Print(ConsoleColor.Yellow);
             if (knownForTitles != null)
