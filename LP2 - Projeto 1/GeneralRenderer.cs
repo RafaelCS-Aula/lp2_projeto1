@@ -5,7 +5,7 @@ using System.Linq;
 namespace LP2___Projeto_1
 {
     /// <summary>
-    /// Works do Display the various menus onscreen
+    /// Works do display information on screen
     /// </summary>
     public abstract class GeneralRenderer : IMenuRenderer
     {

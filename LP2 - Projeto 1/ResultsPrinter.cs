@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Responsible for printing the results of searches
+    /// </summary>
     sealed class ResultsPrinter : GeneralRenderer
     {
         public ResultsPrinter(IMDBSearcher searcher)

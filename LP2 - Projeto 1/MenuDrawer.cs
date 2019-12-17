@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
+    /// <summary>
+    /// Draws the various menus the user will interact with
+    /// </summary>
     sealed class MenuDrawer : GeneralRenderer, IMenu
     {
         ResultsPrinter rP;
