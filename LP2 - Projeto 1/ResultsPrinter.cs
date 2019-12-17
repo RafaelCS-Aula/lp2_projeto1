@@ -4,20 +4,17 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
-    public class ResultsPrinter : GeneralRenderer
+    sealed class ResultsPrinter : GeneralRenderer
     {
-        public ResultsPrinter()
-        {
-            resultsPrinter = this;
-        }
 
         private void PrintTitleResults(
             IDictionary<Title, Rating> filteredTitles)
         {
             List<KeyValuePair<Title, Rating>> titles = filteredTitles.ToList();
             List<string[]> options = new List<string[]>();
+
             DrawResults(
-                (IPrintable table, int index, int selection) =>
+                onIteration:(IPrintable table, int index, int selection) =>
                 {
                     KeyValuePair<Title, Rating> t = titles[index];
 
@@ -47,7 +44,7 @@ namespace LP2___Projeto_1
                             g
                         });
                 },
-                (IPrintable table, int selection, int maxResults) =>
+                onDraw:(IPrintable table, int selection, int maxResults) =>
                 {
                     ((Table)table).Options = options;
                     ((Table)table).Columns[0].Size = new Rect(0, 0, 55, 1);
@@ -81,7 +78,7 @@ namespace LP2___Projeto_1
 
                     return counter;
                 },
-                (ConsoleKeyInfo keyInfo, int selection) =>
+                onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
                 {
                     if (keyInfo.Key == ConsoleKey.A)
                         titles = titles.Sort(x => x.Key.PrimaryTitle.ConvertToString());
@@ -100,8 +97,8 @@ namespace LP2___Projeto_1
                         DrawTitle();
                     }
                 },
-                titles.Count,
-                "Title Result"
+                totalElements:titles.Count,
+                title:"Title Result"
                 );
         }
         
@@ -188,7 +185,7 @@ namespace LP2___Projeto_1
             IDictionary<string, Person> people2 =
                 people.ElementAt(2).ToDictionary(t => t.Key, T => (Person)T.Value);
 
-                PrintEpisodeSpecs(
+                DrawEpisodeSpecs(
                 episode,
                 title,
                 IMDBSearcher.LoadCast(people2, principals),
@@ -220,7 +217,7 @@ namespace LP2___Projeto_1
             if (title.Key.IsEpisode)
             {
                 KeyValuePair<Title, Rating>? episodeTitle = IMDBSearcher.LoadEpisodeTitle(title.Key);
-                PrintTitleSpecs(
+                DrawTitleSpecs(
                     title,
                     episodeTitle,
                     IMDBSearcher.LoadCast(people2, principals),
@@ -229,12 +226,117 @@ namespace LP2___Projeto_1
             }
             else
             {
-                PrintTitleSpecs(
+                DrawTitleSpecs(
                     title,
                     IMDBSearcher.LoadCast(people2, principals),
                     IMDBSearcher.LoadDirectors(people2, crew),
                     IMDBSearcher.LoadWriters(people2, crew));
             }
+        }
+
+        private void PrintNameResults(
+            Person[] people)
+        {
+            List<string[]> options = new List<string[]>();
+
+            DrawResults(
+                onIteration:(IPrintable table, int index, int selection) =>
+                {
+                    Person t = people[index];
+
+                    string name = t.PrimaryName.ConvertToString().ToString();
+                    if (name.Length > 45)
+                        name = name.Substring(0, 42) + "...";
+
+                    string c = t.BirthYear.HasValue ?
+                            t.BirthYear.Value.ToString() :
+                            "N/A";
+
+                    string s = t.DeathYear.HasValue ?
+                        t.DeathYear.ToString() :
+                        "N/A";
+
+                    string[] p = t.PrimaryProfessions.ToStringArray();
+                    for (int i = 0; i < p.Length; i++)
+                        if (!string.IsNullOrEmpty(p[i]))
+                            p[i] = p[i].First().ToString().ToUpper() +
+                                   p[i].Substring(1, p[i].Length - 1);
+
+                    string d = p.ToStringArray(3).Replace("_", " ");
+                    if (d.Length > 45)
+                        d = d.Substring(0, 45) + "...";
+
+                    options.Add(new string[] {
+                            name,
+                            c,
+                            s,
+                            d
+                        });
+                },
+                onDraw:(IPrintable table, int selection, int maxResults) =>
+                {
+                    ((Table)table).Options = options;
+                    ((Table)table).Columns[0].Size = new Rect(0, 0, 40, 1);
+                    ((Table)table).Columns[0].Header = "Primary Name";
+                    ((Table)table).Columns[1].Size = new Rect(0, 0, 12, 1);
+                    ((Table)table).Columns[1].Header = "Birth Year";
+                    ((Table)table).Columns[2].Size = new Rect(0, 0, 12, 1);
+                    ((Table)table).Columns[2].Header = "Death Year";
+                    ((Table)table).Columns[3].Size = new Rect(0, 0, 20, 1);
+                    ((Table)table).Columns[3].Header = "Professions";
+
+                    ((Table)table).Selection = selection % maxResults;
+                    table.Print();
+
+                    int counter = options.Count;
+
+                    options.Clear();
+
+                    Console.CursorTop = 33;
+                    Console.CursorLeft = 0;
+                    for (int i = 33; i < 38; i++)
+                        Console.WriteLine(' '.Repeat(Console.BufferWidth));
+
+                    Console.CursorTop = 33;
+                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
+                    people[selection].ToString().Print();
+
+                    Console.CursorTop = 35;
+                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
+                    Console.WriteLine("a - By Name\ts - By Birth Year\td - By Death Year");
+
+                    return counter;
+                },
+                onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
+                {
+                    if (keyInfo.Key == ConsoleKey.A)
+                        people = people.Sort(x => x.PrimaryName.ConvertToString()).ToArray();
+                    else if (keyInfo.Key == ConsoleKey.S)
+                        people = people.Sort(x => x.BirthYear).ToArray();
+                    else if (keyInfo.Key == ConsoleKey.D)
+                        people = people.Sort(x => x.DeathYear).ToArray();
+                    else if (keyInfo.Key == ConsoleKey.Enter)
+                    {
+                        DrawTitle();
+                        DrawLoading();
+                        PrintNameSpecs(people[selection]);
+                        DrawTitle();
+                    }
+                },
+                totalElements:people.Length,
+                title:"People Result"
+                );
+        }
+
+        private void PrintNameSpecs(
+            Person person)
+        {
+            IDictionary<string, Title> values =
+                IMDBSearcher.LoadTitles(person);
+
+            DrawNameSpecs(
+                person, 
+                values);
         }
 
     }
