@@ -13,7 +13,7 @@ namespace LP2___Projeto_1
                 Console.LargestWindowWidth, 
                 Console.LargestWindowHeight);
 
-            IMDBSearcher searcher = new IMDBSearcher("My IMDB Searcher");
+            IMDBSearcher searcher = new IMDBSearcher("MyIMDBSearcher");
             ResultsPrinter resultP = new ResultsPrinter(searcher);
             IMenu  menu = new MenuDrawer(resultP,searcher);
             menu.MainLoop();

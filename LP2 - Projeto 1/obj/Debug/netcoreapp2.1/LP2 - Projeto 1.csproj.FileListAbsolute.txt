@@ -9,3 +9,13 @@ C:\Users\Mr.Slat\source\repos\LP2 - Projeto 1\LP2 - Projeto 1\obj\Debug\netcorea
 C:\Users\Mr.Slat\source\repos\LP2 - Projeto 1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.AssemblyInfo.cs
 C:\Users\Mr.Slat\source\repos\LP2 - Projeto 1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.dll
 C:\Users\Mr.Slat\source\repos\LP2 - Projeto 1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.pdb
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\bin\Debug\netcoreapp2.1\LP2 - Projeto 1.deps.json
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\bin\Debug\netcoreapp2.1\LP2 - Projeto 1.runtimeconfig.json
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\bin\Debug\netcoreapp2.1\LP2 - Projeto 1.runtimeconfig.dev.json
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\bin\Debug\netcoreapp2.1\LP2 - Projeto 1.dll
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\bin\Debug\netcoreapp2.1\LP2 - Projeto 1.pdb
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.csprojAssemblyReference.cache
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.AssemblyInfoInputs.cache
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.AssemblyInfo.cs
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.dll
+C:\Users\pedro\Documents\UNIVERSIDADE\LP_2\ProjetosLP2\Projeto_1\LP2 - Projeto 1\obj\Debug\netcoreapp2.1\LP2 - Projeto 1.pdb
