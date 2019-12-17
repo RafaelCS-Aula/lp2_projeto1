@@ -275,8 +275,9 @@ namespace LP2___Projeto_1
         {
             List<KeyValuePair<string, Episode>> episodes = filteredEpisodes.ToList();
             List<string[]> options = new List<string[]>();
+            
             Renderer.DrawResults(
-                (IPrintable table, int index, int selection) =>
+                onIteration:(IPrintable table, int index, int selection) =>
                 {
                     KeyValuePair<string, Episode> t = episodes[index];
 
@@ -291,7 +292,7 @@ namespace LP2___Projeto_1
                             c,
                         });
                 },
-                (IPrintable table, int selection, int maxResults) =>
+                onDraw:(IPrintable table, int selection, int maxResults) =>
                 {
                     ((Table)table).Options = options;
                     ((Table)table).Columns[0].Size = new Rect(0, 0, 55, 1);
@@ -321,15 +322,9 @@ namespace LP2___Projeto_1
 
                     return counter;
                 },
-                (ConsoleKeyInfo keyInfo, int selection) =>
+                onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
                 {
-                    /*if (keyInfo.Key == ConsoleKey.A)
-                        titles = titles.Sort(x => x.Key.PrimaryTitle.ConvertToString());
-                    else if (keyInfo.Key == ConsoleKey.S)
-                        titles = titles.Sort(x => x.Key.StartYear);
-                    else if (keyInfo.Key == ConsoleKey.D)
-                        titles = titles.Sort(x => x.Value?.AvarageRating);
-                    else*/ if (keyInfo.Key == ConsoleKey.Enter)
+                    if (keyInfo.Key == ConsoleKey.Enter)
                     {
                         Renderer.DrawTitle();
                         Renderer.DrawLoading();
@@ -339,8 +334,8 @@ namespace LP2___Projeto_1
                         Renderer.DrawTitle();
                     }
                 },
-                episodes.Count,
-                "Episode Result"
+                totalElements:episodes.Count,
+                title:"Episode Result"
                 );
         }
 
@@ -518,8 +513,9 @@ namespace LP2___Projeto_1
             Person[] people)
         {
             List<string[]> options = new List<string[]>();
+
             Renderer.DrawResults(
-                (IPrintable table, int index, int selection) =>
+                onIteration:(IPrintable table, int index, int selection) =>
                 {
                     Person t = people[index];
 
@@ -552,7 +548,7 @@ namespace LP2___Projeto_1
                             d
                         });
                 },
-                (IPrintable table, int selection, int maxResults) =>
+                onDraw:(IPrintable table, int selection, int maxResults) =>
                 {
                     ((Table)table).Options = options;
                     ((Table)table).Columns[0].Size = new Rect(0, 0, 40, 1);
@@ -586,7 +582,7 @@ namespace LP2___Projeto_1
 
                     return counter;
                 },
-                (ConsoleKeyInfo keyInfo, int selection) =>
+                onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
                 {
                     if (keyInfo.Key == ConsoleKey.A)
                         people = people.Sort(x => x.PrimaryName.ConvertToString()).ToArray();
@@ -602,8 +598,8 @@ namespace LP2___Projeto_1
                         Renderer.DrawTitle();
                     }
                 },
-                people.Length,
-                "People Result"
+                totalElements:people.Length,
+                title:"People Result"
                 );
         }
 

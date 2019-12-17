@@ -9,7 +9,7 @@ namespace LP2___Projeto_1
     /// </summary>
     public class MenuRenderer : IMenuRenderer
     {
-        public int MaxResults { get; set; } = 15;
+        public int MaxResults { get; set; }
 
         protected virtual string Figlet => @"
 '####:'##::::'##:'########::'########:::'######::'########::::'###::::'########:::'######::'##::::'##:'########:'########::
