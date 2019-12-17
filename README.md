@@ -49,7 +49,15 @@ o Pedro fez o _UML_.
 ---
 ### Arquitetura da Solução
 
-- (Arquitetura da Solução)
+- Foram usados, principalmente, dicionários para guardar a informação. Desta maneira é possivel realizar procuras rápidas com o "Where" usando apenas uma "Key" no método TryGetValue do dicionário.
+
+- Usamos classes separadas para cada elemento da base de dados implementados por uma interface que os englobe a todos. Desta forma é possivel agregar as classes numa só interface.(ex : IEnumerable<IIMDBValue>...).
+
+- Usamos várias interfaces para o código ser mais fléxivel. E também deixamos as classes em aberto i.e. as classes podem ser herditadas para outros programadores implementarem a sua própria solução usando as mesmas.
+
+- Para os menus usamos métodos lambda para as ações do menus.
+
+- Usamos o pattern Target para a resolução do problema.
 
 #### UML
 
