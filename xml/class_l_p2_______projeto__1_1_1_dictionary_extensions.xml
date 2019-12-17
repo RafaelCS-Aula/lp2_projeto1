@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_dictionary_extensions" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::DictionaryExtensions</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_dictionary_extensions_1ad092a036caa6ecf28468c28d48a9b82e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LP2___Projeto_1.DictionaryExtensions.Print</definition>
+        <argsstring>(this IDictionary&lt; Person, Principal &gt; people, ConsoleColor foreColor, ConsoleColor backColor=ConsoleColor.Black)</argsstring>
+        <name>Print</name>
+        <param>
+          <type>this IDictionary&lt; <ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref>, <ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> &gt;</type>
+          <declname>people</declname>
+        </param>
+        <param>
+          <type>ConsoleColor</type>
+          <declname>foreColor</declname>
+        </param>
+        <param>
+          <type>ConsoleColor</type>
+          <declname>backColor</declname>
+          <defval>ConsoleColor.Black</defval>
+        </param>
+        <briefdescription>
+<para>Prints <ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>people</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> People Dictionary</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>foreColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Foreground Color</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Background Color</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Extensions/DictionaryExtensions.cs" line="17" column="28" bodyfile="Code/Extensions/DictionaryExtensions.cs" bodystart="17" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_dictionary_extensions_1a2f32b529516bf8341fc6a771cca7d529" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LP2___Projeto_1.DictionaryExtensions.Print</definition>
+        <argsstring>(this IDictionary&lt; string, Title &gt; titles, ConsoleColor foreColor, ConsoleColor backColor=ConsoleColor.Black)</argsstring>
+        <name>Print</name>
+        <param>
+          <type>this IDictionary&lt; string, <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref> &gt;</type>
+          <declname>titles</declname>
+        </param>
+        <param>
+          <type>ConsoleColor</type>
+          <declname>foreColor</declname>
+        </param>
+        <param>
+          <type>ConsoleColor</type>
+          <declname>backColor</declname>
+          <defval>ConsoleColor.Black</defval>
+        </param>
+        <briefdescription>
+<para>Prints Titles </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>titles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref> Dictionary</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>foreColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Foreground Color</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Background Color</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Extensions/DictionaryExtensions.cs" line="66" column="28" bodyfile="Code/Extensions/DictionaryExtensions.cs" bodystart="66" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for Dictionary Extensions </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Extensions/DictionaryExtensions.cs" line="10" column="1" bodyfile="Code/Extensions/DictionaryExtensions.cs" bodystart="9" bodyend="87"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_dictionary_extensions_1ad092a036caa6ecf28468c28d48a9b82e" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::DictionaryExtensions</scope><name>Print</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_dictionary_extensions_1a2f32b529516bf8341fc6a771cca7d529" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::DictionaryExtensions</scope><name>Print</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

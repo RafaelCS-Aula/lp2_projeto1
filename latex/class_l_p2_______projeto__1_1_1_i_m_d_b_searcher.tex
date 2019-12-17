@@ -1,0 +1,439 @@
+\doxysection{L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher Class Reference}
+\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher}\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+
+
+Has methods for searching database files  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+M\+D\+B\+Searcher} (string app\+Name)
+\begin{DoxyCompactList}\small\item\em Starts App \end{DoxyCompactList}\item 
+virtual I\+Dictionary$<$ string, \textbf{ Episode} $>$ \textbf{ Load\+Episodes} (\textbf{ Title} title)
+\begin{DoxyCompactList}\small\item\em Loads Episodes from Database \end{DoxyCompactList}\item 
+virtual I\+Dictionary$<$ \textbf{ Title}, \textbf{ Rating} $>$ \textbf{ Load\+Titles} (\textbf{ Search\+Type} search\+Type, string type)
+\begin{DoxyCompactList}\small\item\em Loads Titles and Ratings \end{DoxyCompactList}\item 
+virtual \textbf{ Person}[$\,$] \textbf{ Load\+Names} (\textbf{ Search\+Type} search\+Type, string type)
+\begin{DoxyCompactList}\small\item\em Loads Names (Persons) \end{DoxyCompactList}\item 
+virtual I\+Dictionary$<$ string, \textbf{ Title} $>$ \textbf{ Load\+Titles} (\textbf{ Person} person)
+\begin{DoxyCompactList}\small\item\em Loads Titles with \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} chosen by User \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ \textbf{ Person} $>$ \textbf{ Load\+Directors} (I\+Dictionary$<$ string, \textbf{ Person} $>$ people, I\+Dictionary$<$ string, \textbf{ Crew} $>$ crew)
+\begin{DoxyCompactList}\small\item\em Selects Directors from given \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ \textbf{ Person} $>$ \textbf{ Load\+Writers} (I\+Dictionary$<$ string, \textbf{ Person} $>$ people, I\+Dictionary$<$ string, \textbf{ Crew} $>$ crew)
+\begin{DoxyCompactList}\small\item\em Selects Writers from given \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} \end{DoxyCompactList}\item 
+virtual I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$ \textbf{ Load\+Cast} (I\+Dictionary$<$ string, \textbf{ Person} $>$ people, I\+Dictionary$<$ string, \textbf{ Principal} $>$ principals)
+\begin{DoxyCompactList}\small\item\em Joins principals to People\textquotesingle{}s dictionary \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ I\+Dictionary$<$ string, \textbf{ I\+I\+M\+D\+B\+Value} $>$ $>$ \textbf{ Load\+People\+For\+Title} (Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$ title)
+\begin{DoxyCompactList}\small\item\em Selects the People, Principals, \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} from the \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} \end{DoxyCompactList}\item 
+virtual ? Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$ \textbf{ Load\+Episode\+Title} (\textbf{ Title} title)
+\begin{DoxyCompactList}\small\item\em Loads \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode} Information from \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \textbf{ Line\+Count} (string filename)
+\begin{DoxyCompactList}\small\item\em Counts File Line Count \end{DoxyCompactList}\item 
+virtual void \textbf{ Read} (string filename, Action$<$ string $>$ action)
+\begin{DoxyCompactList}\small\item\em Executes action for each line from File \end{DoxyCompactList}\item 
+virtual void \textbf{ Load\+Basics} ()
+\begin{DoxyCompactList}\small\item\em Loads Genres, Types Professions from Database \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \textbf{ File\+Title\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, file\+Title\+Basics)
+\item 
+virtual string \textbf{ File\+People\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, people\+Filename)
+\item 
+virtual string \textbf{ File\+Crews\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, crew\+Filename)
+\item 
+virtual string \textbf{ File\+Principals\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, principals\+Filename)
+\item 
+virtual string \textbf{ File\+Ratings\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, ratings\+Filename)
+\item 
+virtual string \textbf{ File\+Episodes\+Basics\+Full} =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, episodes\+Filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ App\+Name}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+virtual string \textbf{ Folder\+With\+Files}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Identifies Path for Folder with Database \end{DoxyCompactList}\item 
+int \textbf{ Titles\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Ratings\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ People\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Crew\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Principals\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Episode\+Line\+Count}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+I\+Set$<$ string $>$ \textbf{ Genres} = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+I\+Set$<$ string $>$ \textbf{ Types} = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+I\+Set$<$ string $>$ \textbf{ Professions} = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Has methods for searching database files 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ac3809e35effd4b916f8a37a1a5e7019e}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!IMDBSearcher@{IMDBSearcher}}
+\index{IMDBSearcher@{IMDBSearcher}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{IMDBSearcher()}
+{\footnotesize\ttfamily L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+I\+M\+D\+B\+Searcher (\begin{DoxyParamCaption}\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Starts App 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Name} & Database\textquotesingle{}s Folder Name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a4c47024658b499c3cb9680e22101570f}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LineCount@{LineCount}}
+\index{LineCount@{LineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LineCount()}
+{\footnotesize\ttfamily virtual int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Line\+Count (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Counts File Line Count 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & File\textquotesingle{}s full name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns Number of Lines
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a42be1b97127a2b1fbbf2577e079c23be}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadBasics@{LoadBasics}}
+\index{LoadBasics@{LoadBasics}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadBasics()}
+{\footnotesize\ttfamily virtual void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Basics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Loads Genres, Types Professions from Database 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a7c50a8bd5a91af4e073e89abafee91f1}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadCast@{LoadCast}}
+\index{LoadCast@{LoadCast}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadCast()}
+{\footnotesize\ttfamily virtual I\+Dictionary$<$\textbf{ Person}, \textbf{ Principal}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Cast (\begin{DoxyParamCaption}\item[{I\+Dictionary$<$ string, \textbf{ Person} $>$}]{people,  }\item[{I\+Dictionary$<$ string, \textbf{ Principal} $>$}]{principals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Joins principals to People\textquotesingle{}s dictionary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em people} & People Dictionary\\
+\hline
+{\em principals} & \doxyref{Principal}{p.}{class_l_p2_______projeto__1_1_1_principal}\textquotesingle{}s Dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dictionary of \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} and \doxyref{Principal}{p.}{class_l_p2_______projeto__1_1_1_principal}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a7972acf8d1de2ef9fcbd353cd222eaaa}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadDirectors@{LoadDirectors}}
+\index{LoadDirectors@{LoadDirectors}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadDirectors()}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$\textbf{ Person}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Directors (\begin{DoxyParamCaption}\item[{I\+Dictionary$<$ string, \textbf{ Person} $>$}]{people,  }\item[{I\+Dictionary$<$ string, \textbf{ Crew} $>$}]{crew }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Selects Directors from given \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em people} & People\textquotesingle{}s Database \\
+\hline
+{\em crew} & People\textquotesingle{}s profession\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Enumerable of \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a275c25f44517bf384d14a313ccfc5781}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadEpisodes@{LoadEpisodes}}
+\index{LoadEpisodes@{LoadEpisodes}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadEpisodes()}
+{\footnotesize\ttfamily virtual I\+Dictionary$<$string, \textbf{ Episode}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Episodes (\begin{DoxyParamCaption}\item[{\textbf{ Title}}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Loads Episodes from Database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} in Database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Episodes from Database
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ae0b7093de4f15e99adacc88064699c50}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadEpisodeTitle@{LoadEpisodeTitle}}
+\index{LoadEpisodeTitle@{LoadEpisodeTitle}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadEpisodeTitle()}
+{\footnotesize\ttfamily virtual ? Key\+Value\+Pair$<$\textbf{ Title}, \textbf{ Rating}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Episode\+Title (\begin{DoxyParamCaption}\item[{\textbf{ Title}}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Loads \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode} Information from \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} selected by User\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value containing \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} and \doxyref{Rating}{p.}{class_l_p2_______projeto__1_1_1_rating}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a5921d6b7f307e63a6f3d45d68484405a}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadNames@{LoadNames}}
+\index{LoadNames@{LoadNames}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadNames()}
+{\footnotesize\ttfamily virtual \textbf{ Person} [$\,$] L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Names (\begin{DoxyParamCaption}\item[{\textbf{ Search\+Type}}]{search\+Type,  }\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Loads Names (Persons) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Type} & Search type chosen by User\\
+\hline
+{\em type} & \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a39d9fb541247155707ff5516101a8235}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadPeopleForTitle@{LoadPeopleForTitle}}
+\index{LoadPeopleForTitle@{LoadPeopleForTitle}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadPeopleForTitle()}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$I\+Dictionary$<$string, \textbf{ I\+I\+M\+D\+B\+Value}$>$ $>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+People\+For\+Title (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Selects the People, Principals, \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} from the \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} chosen by User\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Enumerable of Dictionaries of \doxyref{I\+I\+M\+D\+B\+Value}{p.}{interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a2dfa938f501674c66ba1ac9eecab4884}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadTitles@{LoadTitles}}
+\index{LoadTitles@{LoadTitles}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadTitles()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual I\+Dictionary$<$string, \textbf{ Title}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Titles (\begin{DoxyParamCaption}\item[{\textbf{ Person}}]{person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Loads Titles with \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} chosen by User 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dictionary of Titles
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ac0b0be58ccad9831d101e43166be438b}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadTitles@{LoadTitles}}
+\index{LoadTitles@{LoadTitles}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadTitles()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual I\+Dictionary$<$\textbf{ Title}, \textbf{ Rating}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Titles (\begin{DoxyParamCaption}\item[{\textbf{ Search\+Type}}]{search\+Type,  }\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Loads Titles and Ratings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Type} & Search Type chosen by User\\
+\hline
+{\em type} & \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns Titles from Database
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a960133f43f6fe2a67fefc1b2323bfe72}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!LoadWriters@{LoadWriters}}
+\index{LoadWriters@{LoadWriters}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{LoadWriters()}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$\textbf{ Person}$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Load\+Writers (\begin{DoxyParamCaption}\item[{I\+Dictionary$<$ string, \textbf{ Person} $>$}]{people,  }\item[{I\+Dictionary$<$ string, \textbf{ Crew} $>$}]{crew }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Selects Writers from given \doxyref{Crew}{p.}{class_l_p2_______projeto__1_1_1_crew} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em people} & People\textquotesingle{}s Database \\
+\hline
+{\em crew} & People\textquotesingle{}s profession\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Enumerable of \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a0d6c1c9cdf41257a9f8ab857389171f7}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!Read@{Read}}
+\index{Read@{Read}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{Read()}
+{\footnotesize\ttfamily virtual void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Read (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{Action$<$ string $>$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Executes action for each line from File 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & File full name\\
+\hline
+{\em action} & Action for each line\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a1758e5ec869ec69ed8e203a769d5c358}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FileCrewsBasicsFull@{FileCrewsBasicsFull}}
+\index{FileCrewsBasicsFull@{FileCrewsBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FileCrewsBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+Crews\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, crew\+Filename)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a34c0125921f8570b9dc008286be0a02f}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FileEpisodesBasicsFull@{FileEpisodesBasicsFull}}
+\index{FileEpisodesBasicsFull@{FileEpisodesBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FileEpisodesBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+Episodes\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, episodes\+Filename)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a429053e2316985ebc5b96b08eee38f4f}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FilePeopleBasicsFull@{FilePeopleBasicsFull}}
+\index{FilePeopleBasicsFull@{FilePeopleBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FilePeopleBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+People\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, people\+Filename)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ae6f217a058e26727e0c3b7ed0a239a38}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FilePrincipalsBasicsFull@{FilePrincipalsBasicsFull}}
+\index{FilePrincipalsBasicsFull@{FilePrincipalsBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FilePrincipalsBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+Principals\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, principals\+Filename)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a5f6ac25aa7966f20900411273932defa}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FileRatingsBasicsFull@{FileRatingsBasicsFull}}
+\index{FileRatingsBasicsFull@{FileRatingsBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FileRatingsBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+Ratings\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, ratings\+Filename)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_acb8ba54cd8920468b069e800e3c53873}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FileTitleBasicsFull@{FileTitleBasicsFull}}
+\index{FileTitleBasicsFull@{FileTitleBasicsFull}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FileTitleBasicsFull}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+File\+Title\+Basics\+Full =$>$ Path.\+Combine(\textbf{ Folder\+With\+Files}, file\+Title\+Basics)\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a1e1e48c1b037c18dce67c0a7a2e7edf4}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!AppName@{AppName}}
+\index{AppName@{AppName}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{AppName}
+{\footnotesize\ttfamily string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+App\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a4445e1223fec4bb4dda14c86756fbd91}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!CrewLineCount@{CrewLineCount}}
+\index{CrewLineCount@{CrewLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{CrewLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Crew\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a27ccc41e1ebe696732d519f919c88738}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!EpisodeLineCount@{EpisodeLineCount}}
+\index{EpisodeLineCount@{EpisodeLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{EpisodeLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Episode\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a98640a6480c5ded18bed3869bc7bc63c}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!FolderWithFiles@{FolderWithFiles}}
+\index{FolderWithFiles@{FolderWithFiles}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{FolderWithFiles}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Folder\+With\+Files\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Identifies Path for Folder with Database 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a7f3df0dd3cd7000263da6d44cbb9d7dd}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!Genres@{Genres}}
+\index{Genres@{Genres}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{Genres}
+{\footnotesize\ttfamily I\+Set$<$string$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Genres = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ac02e58d58b1c79a509b6823c2e3ab042}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!PeopleLineCount@{PeopleLineCount}}
+\index{PeopleLineCount@{PeopleLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{PeopleLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+People\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a1af54772ca3638e5bf8b988f6b3b7391}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!PrincipalsLineCount@{PrincipalsLineCount}}
+\index{PrincipalsLineCount@{PrincipalsLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{PrincipalsLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Principals\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a22b17725a99fcd23a464c36929a3fecd}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!Professions@{Professions}}
+\index{Professions@{Professions}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{Professions}
+{\footnotesize\ttfamily I\+Set$<$string$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Professions = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_ab7a7ee13b704f2340388a2daa3ea7cb3}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!RatingsLineCount@{RatingsLineCount}}
+\index{RatingsLineCount@{RatingsLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{RatingsLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Ratings\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_a23db0c2a9847e130e795ec6e4195444f}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!TitlesLineCount@{TitlesLineCount}}
+\index{TitlesLineCount@{TitlesLineCount}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{TitlesLineCount}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Titles\+Line\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_i_m_d_b_searcher_add8ffed99a317a53be9712edac6d491b}} 
+\index{LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}!Types@{Types}}
+\index{Types@{Types}!LP2\_\_\_Projeto\_1.IMDBSearcher@{LP2\_\_\_Projeto\_1.IMDBSearcher}}
+\doxysubsubsection{Types}
+{\footnotesize\ttfamily I\+Set$<$string$>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+M\+D\+B\+Searcher.\+Types = new Hash\+Set$<$string$>$()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Database Handling/\textbf{ I\+M\+D\+B\+Searcher.\+cs}\end{DoxyCompactItemize}

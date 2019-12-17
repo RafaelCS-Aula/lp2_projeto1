@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_episode_8cs" kind="file" language="C#">
+    <compoundname>Episode.cs</compoundname>
+    <innerclass refid="class_l_p2_______projeto__1_1_1_episode" prot="public">LP2___Projeto_1::Episode</innerclass>
+    <innernamespace refid="namespace_l_p2_______projeto__1">LP2___Projeto_1</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_l_p2_______projeto__1" kindref="compound">LP2___Projeto_1</ref></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7" refid="class_l_p2_______projeto__1_1_1_episode" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref><sp/>:<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object" kindref="compound">IMDBObject</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1a901a239a3d851f9d789a0cbadec6adaf" kindref="member">ID</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[0];</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1a66693e9ccef1e4eadea743e1a3aeafa1" kindref="member">ParentID</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[1];</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1ac0fb4e754e146f427245befbd2944568" kindref="member">Season</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[2];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1aff4aac3e1a45ffa3521ab7daf1a6b1d5" kindref="member">Number</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[3];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1afa7969ce135c56a385f6b0ddd2a6a57b" kindref="member">Episode</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref><sp/>=<sp/>line.ToCharArray();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1a78c0464beaecaebe321670f1b2004f67" kindref="member">ToString</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Episode<sp/>nº<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1aff4aac3e1a45ffa3521ab7daf1a6b1d5" kindref="member">Number</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\tSeason<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1ac0fb4e754e146f427245befbd2944568" kindref="member">Season</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1a221b7c585c1b81e71a95493dcd1efe1b" kindref="member">Parse</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_episode_1afa7969ce135c56a385f6b0ddd2a6a57b" kindref="member">Episode</ref>(line);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Code/Database Items/Episode.cs"/>
+  </compounddef>
+</doxygen>

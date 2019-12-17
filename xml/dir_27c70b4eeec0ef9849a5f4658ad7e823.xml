@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_27c70b4eeec0ef9849a5f4658ad7e823" kind="dir">
+    <compoundname>Code/Enumerators</compoundname>
+    <innerfile refid="_search_type_8cs">SearchType.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Enumerators/"/>
+  </compounddef>
+</doxygen>

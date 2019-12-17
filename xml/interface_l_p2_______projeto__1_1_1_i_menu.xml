@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="interface_l_p2_______projeto__1_1_1_i_menu" kind="interface" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::IMenu</compoundname>
+    <derivedcompoundref refid="class_l_p2_______projeto__1_1_1_menu_drawer" prot="public" virt="non-virtual">LP2___Projeto_1.MenuDrawer</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_l_p2_______projeto__1_1_1_i_menu_1a2f024f79af3aa39272fa71a4b803ca37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LP2___Projeto_1.IMenu.MainLoop</definition>
+        <argsstring>()</argsstring>
+        <name>MainLoop</name>
+        <reimplementedby refid="class_l_p2_______projeto__1_1_1_menu_drawer_1aab826e9cf5ec92d9903ca2ebdf466ae7">MainLoop</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Interfaces/IMenu.cs" line="8" column="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Menu Interface </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LP2___Projeto_1.IMenu</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_menu"/>
+      </node>
+      <node id="2">
+        <label>LP2___Projeto_1.MenuDrawer</label>
+        <link refid="class_l_p2_______projeto__1_1_1_menu_drawer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Code/Interfaces/IMenu.cs" line="7" column="1" bodyfile="Code/Interfaces/IMenu.cs" bodystart="6" bodyend="9"/>
+    <listofallmembers>
+      <member refid="interface_l_p2_______projeto__1_1_1_i_menu_1a2f024f79af3aa39272fa71a4b803ca37" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::IMenu</scope><name>MainLoop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

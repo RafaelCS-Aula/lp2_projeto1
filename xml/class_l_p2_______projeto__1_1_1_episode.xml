@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_episode" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::Episode</compoundname>
+    <basecompoundref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object" prot="public" virt="non-virtual">LP2___Projeto_1.IMDBObject</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_episode_1a901a239a3d851f9d789a0cbadec6adaf" prot="public" static="no" mutable="no">
+        <type>override string</type>
+        <definition>override string LP2___Projeto_1.Episode.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[0]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="12" column="32" bodyfile="Code/Database Items/Episode.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_episode_1a66693e9ccef1e4eadea743e1a3aeafa1" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Episode.ParentID</definition>
+        <argsstring></argsstring>
+        <name>ParentID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[1]</initializer>
+        <briefdescription>
+<para>Parent ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="18" column="31" bodyfile="Code/Database Items/Episode.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_episode_1ac0fb4e754e146f427245befbd2944568" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Episode.Season</definition>
+        <argsstring></argsstring>
+        <name>Season</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[2]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> Season </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="24" column="31" bodyfile="Code/Database Items/Episode.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_episode_1aff4aac3e1a45ffa3521ab7daf1a6b1d5" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Episode.Number</definition>
+        <argsstring></argsstring>
+        <name>Number</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[3]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> Number </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="30" column="31" bodyfile="Code/Database Items/Episode.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_episode_1afa7969ce135c56a385f6b0ddd2a6a57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.Episode.Episode</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Episode</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, Recieves Line from Database identified as <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line from Database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="38" column="16" bodyfile="Code/Database Items/Episode.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_episode_1a78c0464beaecaebe321670f1b2004f67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string LP2___Projeto_1.Episode.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Creates Line identifying episode </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> in String</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="47" column="32" bodyfile="Code/Database Items/Episode.cs" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_episode_1a221b7c585c1b81e71a95493dcd1efe1b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref></type>
+        <definition>static Episode LP2___Projeto_1.Episode.Parse</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Parse</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Parses Line from Database identified as <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line from Database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Episode.cs" line="58" column="31" bodyfile="Code/Database Items/Episode.cs" bodystart="58" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The class for <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> Information </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Episode</label>
+        <link refid="class_l_p2_______projeto__1_1_1_episode"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Episode</label>
+        <link refid="class_l_p2_______projeto__1_1_1_episode"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Code/Database Items/Episode.cs" line="8" column="1" bodyfile="Code/Database Items/Episode.cs" bodystart="7" bodyend="62"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1afa7969ce135c56a385f6b0ddd2a6a57b" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>Episode</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1a901a239a3d851f9d789a0cbadec6adaf" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>ID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" prot="protected" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>Line</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1aff4aac3e1a45ffa3521ab7daf1a6b1d5" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>Number</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1a66693e9ccef1e4eadea743e1a3aeafa1" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>ParentID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1a221b7c585c1b81e71a95493dcd1efe1b" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>Parse</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1ac0fb4e754e146f427245befbd2944568" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>Season</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_episode_1a78c0464beaecaebe321670f1b2004f67" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Episode</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

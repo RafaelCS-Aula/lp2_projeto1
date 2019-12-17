@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_crew" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::Crew</compoundname>
+    <basecompoundref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object" prot="public" virt="non-virtual">LP2___Projeto_1.IMDBObject</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_crew_1aa65f3c40855fdae8f8a1d065f6611bbd" prot="public" static="no" mutable="no">
+        <type>override string</type>
+        <definition>override string LP2___Projeto_1.Crew.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[0]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref> ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Crew.cs" line="13" column="32" bodyfile="Code/Database Items/Crew.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_crew_1abba0b92f30a4ff8fada67c9346269a50" prot="public" static="no" mutable="no">
+        <type>IEnumerable&lt; string &gt;</type>
+        <definition>virtual IEnumerable&lt;string&gt; LP2___Projeto_1.Crew.DirectorsID</definition>
+        <argsstring></argsstring>
+        <name>DirectorsID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[1].Split(&apos;,&apos;)</initializer>
+        <briefdescription>
+<para>Directors ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Crew.cs" line="19" column="36" bodyfile="Code/Database Items/Crew.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_crew_1af8af5c146d0787d574036af5b5d5a89e" prot="public" static="no" mutable="no">
+        <type>IEnumerable&lt; string &gt;</type>
+        <definition>virtual IEnumerable&lt;string&gt; LP2___Projeto_1.Crew.WritersID</definition>
+        <argsstring></argsstring>
+        <name>WritersID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&quot;\t&quot;)[2].Split(&apos;,&apos;)</initializer>
+        <briefdescription>
+<para>Writers ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Crew.cs" line="25" column="36" bodyfile="Code/Database Items/Crew.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_crew_1a2a8035f1f6dbaf093a1afff4470cf77d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.Crew.Crew</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Crew</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Constructor </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line from Database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Crew.cs" line="32" column="16" bodyfile="Code/Database Items/Crew.cs" bodystart="32" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_crew_1a08ec845c758862e30bb8055fcae8bd75" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref></type>
+        <definition>static Crew LP2___Projeto_1.Crew.Parse</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Parse</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Parses <ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref> from Database Line </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line from Database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Crew.cs" line="42" column="28" bodyfile="Code/Database Items/Crew.cs" bodystart="42" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The class for the <ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref> Information </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Crew</label>
+        <link refid="class_l_p2_______projeto__1_1_1_crew"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Crew</label>
+        <link refid="class_l_p2_______projeto__1_1_1_crew"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Code/Database Items/Crew.cs" line="9" column="1" bodyfile="Code/Database Items/Crew.cs" bodystart="8" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_crew_1a2a8035f1f6dbaf093a1afff4470cf77d" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>Crew</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_crew_1abba0b92f30a4ff8fada67c9346269a50" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>DirectorsID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_crew_1aa65f3c40855fdae8f8a1d065f6611bbd" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>ID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" prot="protected" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>Line</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_crew_1a08ec845c758862e30bb8055fcae8bd75" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>Parse</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_crew_1af8af5c146d0787d574036af5b5d5a89e" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Crew</scope><name>WritersID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

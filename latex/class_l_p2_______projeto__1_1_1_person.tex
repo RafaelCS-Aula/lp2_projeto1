@@ -1,0 +1,191 @@
+\doxysection{L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person Class Reference}
+\label{class_l_p2_______projeto__1_1_1_person}\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+
+
+The class for \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information  
+
+
+Inheritance diagram for L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_l_p2_______projeto__1_1_1_person}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Person} (string line)
+\begin{DoxyCompactList}\small\item\em Constructor, Recieves line from Database \end{DoxyCompactList}\item 
+void \textbf{ Format\+Output} ()
+\begin{DoxyCompactList}\small\item\em Renders \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information \end{DoxyCompactList}\item 
+override string \textbf{ To\+String} ()
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information in a String \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Person} \textbf{ Parse} (string line)
+\begin{DoxyCompactList}\small\item\em Parses \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} from Database Line \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+override string \textbf{ ID} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[0]
+\begin{DoxyCompactList}\small\item\em \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} ID \end{DoxyCompactList}\item 
+virtual string \textbf{ Primary\+Name} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[1]
+\begin{DoxyCompactList}\small\item\em \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}\textquotesingle{}s Primary\+Name \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ I\+Enumerable$<$ char $>$ $>$ \textbf{ Primary\+Professions}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Primary Professions \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ I\+Enumerable$<$ char $>$ $>$ \textbf{ Known\+For\+Titles} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[5].Split(\char`\"{},\char`\"{})
+\begin{DoxyCompactList}\small\item\em Returns Titles for which the \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}\textquotesingle{}s known for ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual ? short??? \textbf{ Birth\+Year}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Birth Year \end{DoxyCompactList}\item 
+virtual ? short??? \textbf{ Death\+Year}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Death Year \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class for \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_ae03128d37441874de7f8a33672b4267b}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!Person@{Person}}
+\index{Person@{Person}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{Person()}
+{\footnotesize\ttfamily L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Person (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Constructor, Recieves line from Database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Line from Database\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_a74b1b3e9444522178adbecfd2d91254e}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!FormatOutput@{FormatOutput}}
+\index{FormatOutput@{FormatOutput}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{FormatOutput()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Format\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renders \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_acba3bcf4dfcb3ea0d53faeda14af784f}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!Parse@{Parse}}
+\index{Parse@{Parse}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{Parse()}
+{\footnotesize\ttfamily static \textbf{ Person} L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Parse (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} from Database Line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Line from Database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_a0922ce25d61c712795d3f7c122b21a55}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!ToString@{ToString}}
+\index{ToString@{ToString}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{ToString()}
+{\footnotesize\ttfamily override string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Information in a String 
+
+\begin{DoxyReturn}{Returns}
+\doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} in String
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_ad8e3e9de98da518b9938d023ae5ca679}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!ID@{ID}}
+\index{ID@{ID}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{ID}
+{\footnotesize\ttfamily override string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+ID =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[0]}
+
+
+
+\doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} ID 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_a862b1fc92db3dff6c4e7d33c18f0ccca}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!KnownForTitles@{KnownForTitles}}
+\index{KnownForTitles@{KnownForTitles}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{KnownForTitles}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$I\+Enumerable$<$char$>$ $>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Known\+For\+Titles =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[5].Split(\char`\"{},\char`\"{})}
+
+
+
+Returns Titles for which the \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}\textquotesingle{}s known for ~\newline
+ 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_a9901e505471be0803c26403229e5fd14}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!PrimaryName@{PrimaryName}}
+\index{PrimaryName@{PrimaryName}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{PrimaryName}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Primary\+Name =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[1]}
+
+
+
+\doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person}\textquotesingle{}s Primary\+Name 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_adcf7e6e7fd6c17e895ca3fff9164058c}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!PrimaryProfessions@{PrimaryProfessions}}
+\index{PrimaryProfessions@{PrimaryProfessions}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{PrimaryProfessions}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$I\+Enumerable$<$char$>$ $>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Primary\+Professions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=> Line.ConvertToString().Split(\textcolor{stringliteral}{"\(\backslash\)t"})[4].Split(\textcolor{stringliteral}{","})}
+\DoxyCodeLine{                    .Select(x => x.ToCharArray())}
+
+\end{DoxyCode}
+
+
+Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Primary Professions 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_a0dc091295603409a760bc6b48470a2a9}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!BirthYear@{BirthYear}}
+\index{BirthYear@{BirthYear}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{BirthYear}
+{\footnotesize\ttfamily virtual ? short??? L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Birth\+Year\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Birth Year 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_person_ac88cc5179405493a3da45d79b6a8754f}} 
+\index{LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}!DeathYear@{DeathYear}}
+\index{DeathYear@{DeathYear}!LP2\_\_\_Projeto\_1.Person@{LP2\_\_\_Projeto\_1.Person}}
+\doxysubsubsection{DeathYear}
+{\footnotesize\ttfamily virtual ? short??? L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Person.\+Death\+Year\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Death Year 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Database Items/\textbf{ Person.\+cs}\end{DoxyCompactItemize}

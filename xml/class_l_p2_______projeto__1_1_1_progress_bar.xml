@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_progress_bar" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::ProgressBar</compoundname>
+    <basecompoundref refid="interface_l_p2_______projeto__1_1_1_i_printable" prot="public" virt="non-virtual">LP2___Projeto_1.IPrintable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_progress_bar_1a7c0a74a8b95f21f8f1882cf345dcc8dd" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LP2___Projeto_1.ProgressBar.progress</definition>
+        <argsstring></argsstring>
+        <name>progress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="11" column="23" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_l_p2_______projeto__1_1_1_progress_bar_1a9fe7c3a868c8b66c5cf51e1455f507d9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref></type>
+        <definition>Rect LP2___Projeto_1.ProgressBar.Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="13" column="21" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="class_l_p2_______projeto__1_1_1_progress_bar_1a60d36aaf0b9148dd46df13098856f33d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>int</type>
+        <definition>int LP2___Projeto_1.ProgressBar.PrintProgress</definition>
+        <argsstring></argsstring>
+        <name>PrintProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="14" column="20" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="class_l_p2_______projeto__1_1_1_progress_bar_1a5e676680bf8c26160c03acac2f880961" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float LP2___Projeto_1.ProgressBar.Progress</definition>
+        <argsstring></argsstring>
+        <name>Progress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="15" column="22" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="16" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_progress_bar_1a80aafe9babbae118612fb86e31d1a840" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.ProgressBar.ProgressBar</definition>
+        <argsstring>(Rect size)</argsstring>
+        <name>ProgressBar</name>
+        <param>
+          <type><ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, Sets <ref refid="class_l_p2_______projeto__1_1_1_progress_bar" kindref="compound">ProgressBar</ref> Size </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_progress_bar" kindref="compound">ProgressBar</ref> Size</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="32" column="16" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_progress_bar_1ac5d433fe5442b4606b9fc962bdd6a1cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LP2___Projeto_1.ProgressBar.Print</definition>
+        <argsstring>()</argsstring>
+        <name>Print</name>
+        <reimplements refid="interface_l_p2_______projeto__1_1_1_i_printable_1a3074fbd77403699f1ad11db2de9b0aae">Print</reimplements>
+        <briefdescription>
+<para>Prints <ref refid="class_l_p2_______projeto__1_1_1_progress_bar" kindref="compound">ProgressBar</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ProgressBar.cs" line="40" column="21" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="40" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for <ref refid="class_l_p2_______projeto__1_1_1_progress_bar" kindref="compound">ProgressBar</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IPrintable</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_printable"/>
+      </node>
+      <node id="1">
+        <label>LP2___Projeto_1.ProgressBar</label>
+        <link refid="class_l_p2_______projeto__1_1_1_progress_bar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IPrintable</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_printable"/>
+      </node>
+      <node id="1">
+        <label>LP2___Projeto_1.ProgressBar</label>
+        <link refid="class_l_p2_______projeto__1_1_1_progress_bar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Code/Visual Output/ProgressBar.cs" line="10" column="1" bodyfile="Code/Visual Output/ProgressBar.cs" bodystart="9" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1ac5d433fe5442b4606b9fc962bdd6a1cc" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>Print</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1a60d36aaf0b9148dd46df13098856f33d" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>PrintProgress</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1a5e676680bf8c26160c03acac2f880961" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>Progress</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1a7c0a74a8b95f21f8f1882cf345dcc8dd" prot="private" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>progress</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1a80aafe9babbae118612fb86e31d1a840" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>ProgressBar</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_progress_bar_1a9fe7c3a868c8b66c5cf51e1455f507d9" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ProgressBar</scope><name>Size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

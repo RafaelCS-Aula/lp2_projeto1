@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_results_printer" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::ResultsPrinter</compoundname>
+    <basecompoundref refid="class_l_p2_______projeto__1_1_1_general_renderer" prot="public" virt="non-virtual">LP2___Projeto_1.GeneralRenderer</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1abe19af152b2267eebfa8a43d3e772bc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.ResultsPrinter.ResultsPrinter</definition>
+        <argsstring>(IMDBSearcher searcher)</argsstring>
+        <name>ResultsPrinter</name>
+        <param>
+          <type><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_searcher" kindref="compound">IMDBSearcher</ref></type>
+          <declname>searcher</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, instances <ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_searcher" kindref="compound">IMDBSearcher</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>searcher</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Given <ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_searcher" kindref="compound">IMDBSearcher</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="16" column="16" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1af4c5a7bc219ce099e7b5d2cd392f5912" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintTitleResults</definition>
+        <argsstring>(IDictionary&lt; Title, Rating &gt; filteredTitles)</argsstring>
+        <name>PrintTitleResults</name>
+        <param>
+          <type>IDictionary&lt; <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref>, <ref refid="class_l_p2_______projeto__1_1_1_rating" kindref="compound">Rating</ref> &gt;</type>
+          <declname>filteredTitles</declname>
+        </param>
+        <briefdescription>
+<para>Prints Search Results for Titles </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filteredTitles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary of Titles</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="25" column="29" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="25" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1acdd9a0a53afca4b765a4eafe5f360309" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintEpisodeSpecs</definition>
+        <argsstring>(KeyValuePair&lt; string, Episode &gt; episode, KeyValuePair&lt; Title, Rating &gt; title)</argsstring>
+        <name>PrintEpisodeSpecs</name>
+        <param>
+          <type>KeyValuePair&lt; string, <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> &gt;</type>
+          <declname>episode</declname>
+        </param>
+        <param>
+          <type>KeyValuePair&lt; <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref>, <ref refid="class_l_p2_______projeto__1_1_1_rating" kindref="compound">Rating</ref> &gt;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Prints <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> Specifications </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>episode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chosen <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref>&apos;s <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref> and <ref refid="class_l_p2_______projeto__1_1_1_rating" kindref="compound">Rating</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="208" column="29" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="208" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1ad08ede043fe9476e45ab426039391a45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintTitleSpecs</definition>
+        <argsstring>(KeyValuePair&lt; Title, Rating &gt; title)</argsstring>
+        <name>PrintTitleSpecs</name>
+        <param>
+          <type>KeyValuePair&lt; <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref>, <ref refid="class_l_p2_______projeto__1_1_1_rating" kindref="compound">Rating</ref> &gt;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Prints <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref> Specification </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chosen <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="236" column="29" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="236" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1ae6d862de9e973fcfb617a65904484b19" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintNameResults</definition>
+        <argsstring>(Person[] people)</argsstring>
+        <name>PrintNameResults</name>
+        <param>
+          <type><ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref>[]</type>
+          <declname>people</declname>
+        </param>
+        <briefdescription>
+<para>Prints Name Search Results </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>people</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enumerator of People</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="285" column="29" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="285" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1ade91231a0d0378e2cb1a76b5c4bd1186" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintNameSpecs</definition>
+        <argsstring>(Person person)</argsstring>
+        <name>PrintNameSpecs</name>
+        <param>
+          <type><ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref></type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+<para>Prints <ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref> Specifications </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chosen <ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="387" column="29" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="387" bodyend="396"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_results_printer_1a3ba6f856a087614080b90f3560f087c4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void LP2___Projeto_1.ResultsPrinter.PrintEpisodeResults</definition>
+        <argsstring>(IDictionary&lt; string, Episode &gt; filteredEpisodes, KeyValuePair&lt; Title, Rating &gt; title)</argsstring>
+        <name>PrintEpisodeResults</name>
+        <param>
+          <type>IDictionary&lt; string, <ref refid="class_l_p2_______projeto__1_1_1_episode" kindref="compound">Episode</ref> &gt;</type>
+          <declname>filteredEpisodes</declname>
+        </param>
+        <param>
+          <type>KeyValuePair&lt; <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref>, <ref refid="class_l_p2_______projeto__1_1_1_rating" kindref="compound">Rating</ref> &gt;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Prints Search Results for Episodes </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filteredEpisodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary of Episodes</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Searched <ref refid="class_l_p2_______projeto__1_1_1_title" kindref="compound">Title</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/ResultsPrinter.cs" line="129" column="32" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="129" bodyend="201"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Responsible for printing the results of searches </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LP2___Projeto_1.ResultsPrinter</label>
+        <link refid="class_l_p2_______projeto__1_1_1_results_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GeneralRenderer</label>
+        <link refid="class_l_p2_______projeto__1_1_1_general_renderer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IMenuRenderer</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_menu_renderer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LP2___Projeto_1.ResultsPrinter</label>
+        <link refid="class_l_p2_______projeto__1_1_1_results_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GeneralRenderer</label>
+        <link refid="class_l_p2_______projeto__1_1_1_general_renderer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IMenuRenderer</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_menu_renderer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Code/Visual Output/ResultsPrinter.cs" line="11" column="1" bodyfile="Code/Visual Output/ResultsPrinter.cs" bodystart="10" bodyend="398"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1aef482cf6eb7a126ebd29fc792f949829" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawEpisodeSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a39f97773e359af213515a7e68b89e7d5" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawLoading</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a20a19a01a1404170d7f992a3494587d5" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawMenu</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a11f874dc4c9022aaadc8e6ddb9789dca" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawNameSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a7bf9ed081caa032631cf80c96113af10" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawResults</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1abff883d621787e7e83cd34b4bb9195e4" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawTitle</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a32b92056673e182e114a2f7fd3738c1e" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawTitleSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1af4de682fd215bbcd518fe13d065400a6" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>DrawTitleSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1acf4ffa640a75159f290a4987008090db" prot="protected" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>Figlet</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a295ea8fb1aa28463e2791ce8d0ce4b89" prot="protected" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>IMDBSearcher</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_general_renderer_1a4262807c7bfc08c799953c2bf3d04846" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>MaxResults</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1a3ba6f856a087614080b90f3560f087c4" prot="protected" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintEpisodeResults</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1acdd9a0a53afca4b765a4eafe5f360309" prot="public" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintEpisodeSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1ae6d862de9e973fcfb617a65904484b19" prot="public" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintNameResults</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1ade91231a0d0378e2cb1a76b5c4bd1186" prot="public" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintNameSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1af4c5a7bc219ce099e7b5d2cd392f5912" prot="public" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintTitleResults</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1ad08ede043fe9476e45ab426039391a45" prot="public" virt="virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>PrintTitleSpecs</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_results_printer_1abe19af152b2267eebfa8a43d3e772bc1" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::ResultsPrinter</scope><name>ResultsPrinter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

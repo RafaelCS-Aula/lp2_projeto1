@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_6cd9b51192fdab4bba96c302c8ed8fbd" kind="dir">
+    <compoundname>Code/Database Handling</compoundname>
+    <innerfile refid="_i_m_d_b_file_reader_8cs">IMDBFileReader.cs</innerfile>
+    <innerfile refid="_i_m_d_b_object_8cs">IMDBObject.cs</innerfile>
+    <innerfile refid="_i_m_d_b_searcher_8cs">IMDBSearcher.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Database Handling/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,281 @@
+\doxysection{L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer Class Reference}
+\label{class_l_p2_______projeto__1_1_1_general_renderer}\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+
+
+Works to display information on screen  
+
+
+Inheritance diagram for L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_l_p2_______projeto__1_1_1_general_renderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Draw\+Title} (Console\+Color color=Console\+Color.\+Red)
+\begin{DoxyCompactList}\small\item\em Draws \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Loading} ()
+\begin{DoxyCompactList}\small\item\em Draw Loading Screen \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Menu} (string title, \textbf{ Rect} size, I\+Enumerable$<$ string[$\,$]$>$ options, Func$<$ short, bool $>$ on\+Enter, Action on\+Escape)
+\begin{DoxyCompactList}\small\item\em Draws Menu \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Results} (Action$<$ \textbf{ I\+Printable}, int, int $>$ on\+Iteration, Func$<$ \textbf{ I\+Printable}, int, int, int $>$ on\+Draw, Action$<$ Console\+Key\+Info, int $>$ on\+Key\+Press, int total\+Elements, string title)
+\begin{DoxyCompactList}\small\item\em Draw Results Menu \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Title\+Specs} (Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$ title, I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$ cast, I\+Enumerable$<$ \textbf{ Person} $>$ directors, I\+Enumerable$<$ \textbf{ Person} $>$ writers)
+\begin{DoxyCompactList}\small\item\em Draw \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Specifications \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Episode\+Specs} (Key\+Value\+Pair$<$ string, \textbf{ Episode} $>$ episode, Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$ title, I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$ cast, I\+Enumerable$<$ \textbf{ Person} $>$ directors, I\+Enumerable$<$ \textbf{ Person} $>$ writers)
+\begin{DoxyCompactList}\small\item\em Draw \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode} Specifications \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Title\+Specs} (Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$ title, Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$? episode\+Parent, I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$ cast, I\+Enumerable$<$ \textbf{ Person} $>$ directors, I\+Enumerable$<$ \textbf{ Person} $>$ writers)
+\begin{DoxyCompactList}\small\item\em Draw \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Specifications \end{DoxyCompactList}\item 
+void \textbf{ Draw\+Name\+Specs} (\textbf{ Person} person, I\+Dictionary$<$ string, \textbf{ Title} $>$ known\+For\+Titles)
+\begin{DoxyCompactList}\small\item\em Draw \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Specifications \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \textbf{ Figlet}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+M\+D\+B\+Searcher} \textbf{ I\+M\+D\+B\+Searcher}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Max\+Results}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Works to display information on screen 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_aef482cf6eb7a126ebd29fc792f949829}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawEpisodeSpecs@{DrawEpisodeSpecs}}
+\index{DrawEpisodeSpecs@{DrawEpisodeSpecs}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawEpisodeSpecs()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Episode\+Specs (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ string, \textbf{ Episode} $>$}]{episode,  }\item[{Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$}]{title,  }\item[{I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$}]{cast,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{directors,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{writers }\end{DoxyParamCaption})}
+
+
+
+Draw \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode} Specifications 
+
+
+\begin{DoxyParams}{Parameters}
+{\em episode} & Value Containing \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode}\\
+\hline
+{\em title} & Value Containing \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} and \doxyref{Rating}{p.}{class_l_p2_______projeto__1_1_1_rating}\\
+\hline
+{\em cast} & Dictionary of Principals\\
+\hline
+{\em directors} & Enumerable of Directors\\
+\hline
+{\em writers} & Enumerable of Writers\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_acaa9e8e01709c9d5af90c52268b7e3f0}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a39f97773e359af213515a7e68b89e7d5}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawLoading@{DrawLoading}}
+\index{DrawLoading@{DrawLoading}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawLoading()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draw Loading Screen 
+
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_af5d56985ae545f520a696cf2b7eec201}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a20a19a01a1404170d7f992a3494587d5}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawMenu@{DrawMenu}}
+\index{DrawMenu@{DrawMenu}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawMenu()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Menu (\begin{DoxyParamCaption}\item[{string}]{title,  }\item[{\textbf{ Rect}}]{size,  }\item[{I\+Enumerable$<$ string[$\,$]$>$}]{options,  }\item[{Func$<$ short, bool $>$}]{on\+Enter,  }\item[{Action}]{on\+Escape }\end{DoxyParamCaption})}
+
+
+
+Draws Menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Menu \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\\
+\hline
+{\em size} & Menu Size\\
+\hline
+{\em options} & Menu Options\\
+\hline
+{\em on\+Enter} & On \textquotesingle{}Enter\textquotesingle{} key Function\\
+\hline
+{\em on\+Escape} & On \textquotesingle{}Escape\textquotesingle{} key Function\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_a5571961067f68ed9f11a90e6f5bdd486}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a11f874dc4c9022aaadc8e6ddb9789dca}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawNameSpecs@{DrawNameSpecs}}
+\index{DrawNameSpecs@{DrawNameSpecs}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawNameSpecs()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Name\+Specs (\begin{DoxyParamCaption}\item[{\textbf{ Person}}]{person,  }\item[{I\+Dictionary$<$ string, \textbf{ Title} $>$}]{known\+For\+Titles }\end{DoxyParamCaption})}
+
+
+
+Draw \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} Specifications 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \doxyref{Person}{p.}{class_l_p2_______projeto__1_1_1_person} being Examined\\
+\hline
+{\em known\+For\+Titles} & Dictionary of Titles\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_a7de24348d236baa9cfcfc514b52b44ae}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a7bf9ed081caa032631cf80c96113af10}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawResults@{DrawResults}}
+\index{DrawResults@{DrawResults}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawResults()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Results (\begin{DoxyParamCaption}\item[{Action$<$ \textbf{ I\+Printable}, int, int $>$}]{on\+Iteration,  }\item[{Func$<$ \textbf{ I\+Printable}, int, int, int $>$}]{on\+Draw,  }\item[{Action$<$ Console\+Key\+Info, int $>$}]{on\+Key\+Press,  }\item[{int}]{total\+Elements,  }\item[{string}]{title }\end{DoxyParamCaption})}
+
+
+
+Draw Results Menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+Iteration} & On Iteration Call\+Back Function\\
+\hline
+{\em on\+Draw} & On \textquotesingle{}Menu Draw\textquotesingle{} Call\+Back Function\\
+\hline
+{\em on\+Key\+Press} & On \textquotesingle{}Key\+Press\textquotesingle{} Call\+Back Function\\
+\hline
+{\em total\+Elements} & Menu Total Options Count\\
+\hline
+{\em title} & Menu \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_ac1f635a7bf1ff9c20ebe5548051e7c82}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_abff883d621787e7e83cd34b4bb9195e4}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawTitle@{DrawTitle}}
+\index{DrawTitle@{DrawTitle}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawTitle()}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Title (\begin{DoxyParamCaption}\item[{Console\+Color}]{color = {\ttfamily ConsoleColor.Red} }\end{DoxyParamCaption})}
+
+
+
+Draws \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & foreground Color\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_acdc82d1eb903c7864a0d4854b127d215}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a32b92056673e182e114a2f7fd3738c1e}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawTitleSpecs@{DrawTitleSpecs}}
+\index{DrawTitleSpecs@{DrawTitleSpecs}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawTitleSpecs()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Title\+Specs (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$}]{title,  }\item[{I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$}]{cast,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{directors,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{writers }\end{DoxyParamCaption})}
+
+
+
+Draw \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Specifications 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Value Containing \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} and \doxyref{Rating}{p.}{class_l_p2_______projeto__1_1_1_rating}\\
+\hline
+{\em cast} & Dictionary of Principals\\
+\hline
+{\em directors} & Enumerable of Directors\\
+\hline
+{\em writers} & Enumerable of Writers\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_a73bad7931593d0e01cdd582d39b42f5e}.
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_af4de682fd215bbcd518fe13d065400a6}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!DrawTitleSpecs@{DrawTitleSpecs}}
+\index{DrawTitleSpecs@{DrawTitleSpecs}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{DrawTitleSpecs()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Draw\+Title\+Specs (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$}]{title,  }\item[{Key\+Value\+Pair$<$ \textbf{ Title}, \textbf{ Rating} $>$?}]{episode\+Parent,  }\item[{I\+Dictionary$<$ \textbf{ Person}, \textbf{ Principal} $>$}]{cast,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{directors,  }\item[{I\+Enumerable$<$ \textbf{ Person} $>$}]{writers }\end{DoxyParamCaption})}
+
+
+
+Draw \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Specifications 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Value Containing \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} and \doxyref{Rating}{p.}{class_l_p2_______projeto__1_1_1_rating} of Series\\
+\hline
+{\em episode\+Parent} & Value Containing \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} and \doxyref{Rating}{p.}{class_l_p2_______projeto__1_1_1_rating} of \doxyref{Episode}{p.}{class_l_p2_______projeto__1_1_1_episode} Parent\\
+\hline
+{\em cast} & Dictionary of Principals\\
+\hline
+{\em directors} & Enumerable of Directors\\
+\hline
+{\em writers} & Enumerable of Writers\\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+I\+Menu\+Renderer} \doxyref{}{p.}{interface_l_p2_______projeto__1_1_1_i_menu_renderer_a2d266d78705a1c2a59b0e262a288c88f}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_acf4ffa640a75159f290a4987008090db}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!Figlet@{Figlet}}
+\index{Figlet@{Figlet}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{Figlet}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Figlet\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=> \textcolor{stringliteral}{@"}}
+\DoxyCodeLine{\textcolor{stringliteral}{'\#\#\#\#:'\#\#::::'\#\#:'\#\#\#\#\#\#\#\#::'\#\#\#\#\#\#\#\#:::'\#\#\#\#\#\#::'\#\#\#\#\#\#\#\#::::'\#\#\#::::'\#\#\#\#\#\#\#\#:::'\#\#\#\#\#\#::'\#\#::::'\#\#:'\#\#\#\#\#\#\#\#:'\#\#\#\#\#\#\#\#::}}
+\DoxyCodeLine{\textcolor{stringliteral}{. \#\#:: \#\#\#::'\#\#\#: \#\#.... \#\#: \#\#.... \#\#:'\#\#... \#\#: \#\#.....::::'\#\# \#\#::: \#\#.... \#\#:'\#\#... \#\#: \#\#:::: \#\#: \#\#.....:: \#\#.... \#\#:}}
+\DoxyCodeLine{\textcolor{stringliteral}{: \#\#:: \#\#\#\#'\#\#\#\#: \#\#:::: \#\#: \#\#:::: \#\#: \#\#:::..:: \#\#::::::::'\#\#:. \#\#:: \#\#:::: \#\#: \#\#:::..:: \#\#:::: \#\#: \#\#::::::: \#\#:::: \#\#:}}
+\DoxyCodeLine{\textcolor{stringliteral}{: \#\#:: \#\# \#\#\# \#\#: \#\#:::: \#\#: \#\#\#\#\#\#\#\#::. \#\#\#\#\#\#:: \#\#\#\#\#\#:::'\#\#:::. \#\#: \#\#\#\#\#\#\#\#:: \#\#::::::: \#\#\#\#\#\#\#\#\#: \#\#\#\#\#\#::: \#\#\#\#\#\#\#\#::}}
+\DoxyCodeLine{\textcolor{stringliteral}{: \#\#:: \#\#. \#: \#\#: \#\#:::: \#\#: \#\#.... \#\#::..... \#\#: \#\#...:::: \#\#\#\#\#\#\#\#\#: \#\#.. \#\#::: \#\#::::::: \#\#.... \#\#: \#\#...:::: \#\#.. \#\#:::}}
+\DoxyCodeLine{\textcolor{stringliteral}{: \#\#:: \#\#:.:: \#\#: \#\#:::: \#\#: \#\#:::: \#\#:'\#\#::: \#\#: \#\#::::::: \#\#.... \#\#: \#\#::. \#\#:: \#\#::: \#\#: \#\#:::: \#\#: \#\#::::::: \#\#::. \#\#::}}
+\DoxyCodeLine{\textcolor{stringliteral}{'\#\#\#\#: \#\#:::: \#\#: \#\#\#\#\#\#\#\#:: \#\#\#\#\#\#\#\#::. \#\#\#\#\#\#:: \#\#\#\#\#\#\#\#: \#\#:::: \#\#: \#\#:::. \#\#:. \#\#\#\#\#\#:: \#\#:::: \#\#: \#\#\#\#\#\#\#\#: \#\#:::. \#\#:}}
+\DoxyCodeLine{\textcolor{stringliteral}{....::..:::::..::........:::........::::......:::........::..:::::..::..:::::..:::......:::..:::::..::........::..:::::..::"}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a295ea8fb1aa28463e2791ce8d0ce4b89}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!IMDBSearcher@{IMDBSearcher}}
+\index{IMDBSearcher@{IMDBSearcher}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{IMDBSearcher}
+{\footnotesize\ttfamily \textbf{ I\+M\+D\+B\+Searcher} L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+I\+M\+D\+B\+Searcher\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_general_renderer_a4262807c7bfc08c799953c2bf3d04846}} 
+\index{LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}!MaxResults@{MaxResults}}
+\index{MaxResults@{MaxResults}!LP2\_\_\_Projeto\_1.GeneralRenderer@{LP2\_\_\_Projeto\_1.GeneralRenderer}}
+\doxysubsubsection{MaxResults}
+{\footnotesize\ttfamily int L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+General\+Renderer.\+Max\+Results\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Visual Output/\textbf{ General\+Renderer.\+cs}\end{DoxyCompactItemize}

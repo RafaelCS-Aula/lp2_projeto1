@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_23fdee2f6995db16c755697cdf620cf4" kind="dir">
+    <compoundname>Code</compoundname>
+    <innerdir refid="dir_6cd9b51192fdab4bba96c302c8ed8fbd">Code/Database Handling</innerdir>
+    <innerdir refid="dir_44a93f9eb6f7ae9f70adfb8104022bce">Code/Database Items</innerdir>
+    <innerdir refid="dir_27c70b4eeec0ef9849a5f4658ad7e823">Code/Enumerators</innerdir>
+    <innerdir refid="dir_17a425bd67dbb0bcf29facced52da669">Code/Extensions</innerdir>
+    <innerdir refid="dir_0409bf9446f7ed1f62079f96d35d6376">Code/Interfaces</innerdir>
+    <innerdir refid="dir_b8ccaad3d1a27c102ff5613f40b7d7f3">Code/Visual Output</innerdir>
+    <innerfile refid="_program_8cs">Program.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/"/>
+  </compounddef>
+</doxygen>

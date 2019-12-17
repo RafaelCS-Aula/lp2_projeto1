@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_i_i_m_d_b_reader_8cs" kind="file" language="C#">
+    <compoundname>IIMDBReader.cs</compoundname>
+    <innerclass refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader" prot="public">LP2___Projeto_1::IIMDBReader</innerclass>
+    <innernamespace refid="namespace_l_p2_______projeto__1">LP2___Projeto_1</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_l_p2_______projeto__1" kindref="compound">LP2___Projeto_1</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10" refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader" kindref="compound">IIMDBReader</ref>&lt;T&gt;<sp/>where<sp/>T<sp/>:<sp/><ref refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value" kindref="compound">IIMDBValue</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IEnumerable&lt;T&gt;<sp/><ref refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader_1ae73c5dd3ef62fbfb1360185316b8c859" kindref="member">Read</ref>(Action&lt;int&gt;<sp/>onRead);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader_1aad83a738203f085ea29e08e191a83ce1" kindref="member">LineCount</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_reader_1aedf110f061a4736e23e2262fbf6b3d03" kindref="member">Parse</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Code/Interfaces/IIMDBReader.cs"/>
+  </compounddef>
+</doxygen>

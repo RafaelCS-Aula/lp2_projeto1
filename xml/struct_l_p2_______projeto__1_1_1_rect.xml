@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_l_p2_______projeto__1_1_1_rect" kind="struct" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::Rect</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="struct_l_p2_______projeto__1_1_1_rect_1ad423bad6021b18fa6f371b4995f798bb" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int LP2___Projeto_1.Rect.X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Rect.cs" line="8" column="20" bodyfile="Code/Visual Output/Rect.cs" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_l_p2_______projeto__1_1_1_rect_1ac91c18a682ef336749eb90dfe917fc4e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int LP2___Projeto_1.Rect.Y</definition>
+        <argsstring></argsstring>
+        <name>Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Rect.cs" line="9" column="20" bodyfile="Code/Visual Output/Rect.cs" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_l_p2_______projeto__1_1_1_rect_1a218a9751a66b7aacc349c51b39886e48" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int LP2___Projeto_1.Rect.Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Rect.cs" line="10" column="20" bodyfile="Code/Visual Output/Rect.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_l_p2_______projeto__1_1_1_rect_1a3029743e1868b67017ac07d5b4bfde8b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int LP2___Projeto_1.Rect.Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Rect.cs" line="11" column="20" bodyfile="Code/Visual Output/Rect.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_l_p2_______projeto__1_1_1_rect_1a9514ce193a0290c0c2e4f87bddf595a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.Rect.Rect</definition>
+        <argsstring>(int x, int y, int width, int height)</argsstring>
+        <name>Rect</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, sets <ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref> Position and Dimensions </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top Left Position in &apos;x&apos; axis</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top Left Position in &apos;y&apos; axis</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rectangle Width</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rectangle Height</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Rect.cs" line="20" column="16" bodyfile="Code/Visual Output/Rect.cs" bodystart="20" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct for <ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Visual Output/Rect.cs" line="7" column="1" bodyfile="Code/Visual Output/Rect.cs" bodystart="6" bodyend="27"/>
+    <listofallmembers>
+      <member refid="struct_l_p2_______projeto__1_1_1_rect_1a3029743e1868b67017ac07d5b4bfde8b" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Rect</scope><name>Height</name></member>
+      <member refid="struct_l_p2_______projeto__1_1_1_rect_1a9514ce193a0290c0c2e4f87bddf595a0" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Rect</scope><name>Rect</name></member>
+      <member refid="struct_l_p2_______projeto__1_1_1_rect_1a218a9751a66b7aacc349c51b39886e48" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Rect</scope><name>Width</name></member>
+      <member refid="struct_l_p2_______projeto__1_1_1_rect_1ad423bad6021b18fa6f371b4995f798bb" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Rect</scope><name>X</name></member>
+      <member refid="struct_l_p2_______projeto__1_1_1_rect_1ac91c18a682ef336749eb90dfe917fc4e" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Rect</scope><name>Y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

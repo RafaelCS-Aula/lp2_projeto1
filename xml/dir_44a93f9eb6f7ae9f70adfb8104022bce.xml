@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_44a93f9eb6f7ae9f70adfb8104022bce" kind="dir">
+    <compoundname>Code/Database Items</compoundname>
+    <innerfile refid="_crew_8cs">Crew.cs</innerfile>
+    <innerfile refid="_episode_8cs">Episode.cs</innerfile>
+    <innerfile refid="_person_8cs">Person.cs</innerfile>
+    <innerfile refid="_principal_8cs">Principal.cs</innerfile>
+    <innerfile refid="_rating_8cs">Rating.cs</innerfile>
+    <innerfile refid="_title_8cs">Title.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Database Items/"/>
+  </compounddef>
+</doxygen>

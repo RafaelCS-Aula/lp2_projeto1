@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_crew_8cs" kind="file" language="C#">
+    <compoundname>Crew.cs</compoundname>
+    <innerclass refid="class_l_p2_______projeto__1_1_1_crew" prot="public">LP2___Projeto_1::Crew</innerclass>
+    <innernamespace refid="namespace_l_p2_______projeto__1">LP2___Projeto_1</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections.Generic;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_l_p2_______projeto__1" kindref="compound">LP2___Projeto_1</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="class_l_p2_______projeto__1_1_1_crew" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref><sp/>:<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object" kindref="compound">IMDBObject</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1aa65f3c40855fdae8f8a1d065f6611bbd" kindref="member">ID</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[0];</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>IEnumerable&lt;string&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1abba0b92f30a4ff8fada67c9346269a50" kindref="member">DirectorsID</ref><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[1].Split(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>IEnumerable&lt;string&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1af8af5c146d0787d574036af5b5d5a89e" kindref="member">WritersID</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref>.ConvertToString().Split(</highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal">)[2].Split(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1a2a8035f1f6dbaf093a1afff4470cf77d" kindref="member">Crew</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" kindref="member">Line</ref><sp/>=<sp/>line.ToCharArray();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_crew" kindref="compound">Crew</ref><sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1a08ec845c758862e30bb8055fcae8bd75" kindref="member">Parse</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//tconst<sp/><sp/><sp/><sp/><sp/>directors<sp/><sp/>writers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_l_p2_______projeto__1_1_1_crew_1a2a8035f1f6dbaf093a1afff4470cf77d" kindref="member">Crew</ref>(line);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Code/Database Items/Crew.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_principal" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::Principal</compoundname>
+    <basecompoundref refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object" prot="public" virt="non-virtual">LP2___Projeto_1.IMDBObject</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_principal_1aabf6b2339bc39c7da86d83adb6942998" prot="public" static="no" mutable="no">
+        <type>override string</type>
+        <definition>override string LP2___Projeto_1.Principal.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&apos;\t&apos;)[0]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="11" column="32" bodyfile="Code/Database Items/Principal.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_principal_1a7b708c7e4436c3a56b26521f309464b6" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Principal.PersonID</definition>
+        <argsstring></argsstring>
+        <name>PersonID</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&apos;\t&apos;)[1]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_person" kindref="compound">Person</ref> ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="17" column="31" bodyfile="Code/Database Items/Principal.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_principal_1acb0c32e42dffb5299819a85876848e52" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Principal.Category</definition>
+        <argsstring></argsstring>
+        <name>Category</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&apos;\t&apos;)[2]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> Category </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="23" column="31" bodyfile="Code/Database Items/Principal.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_principal_1ab35147b75c66e93ce6478b348519d8b6" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Principal.Job</definition>
+        <argsstring></argsstring>
+        <name>Job</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&apos;\t&apos;)[3]</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> Job </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="29" column="31" bodyfile="Code/Database Items/Principal.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_p2_______projeto__1_1_1_principal_1ab9c9b20a0c0adcea3c0dcf07bba20839" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>virtual string LP2___Projeto_1.Principal.Characters</definition>
+        <argsstring></argsstring>
+        <name>Characters</name>
+        <initializer>=&gt; Line.ConvertToString().Split(&apos;\t&apos;)[4]
+                   .Replace(&quot;[&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;)</initializer>
+        <briefdescription>
+<para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref>&apos;s Characters </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="35" column="31" bodyfile="Code/Database Items/Principal.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_principal_1a19550b79f2d4fcfff169485f01ca8e3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.Principal.Principal</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Principal</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, Receives Line from Database </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line from Database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="43" column="16" bodyfile="Code/Database Items/Principal.cs" bodystart="43" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_principal_1a7c2a5592e13d0b5b9e9444a92d4b36d8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref></type>
+        <definition>static Principal LP2___Projeto_1.Principal.Parse</definition>
+        <argsstring>(string line)</argsstring>
+        <name>Parse</name>
+        <param>
+          <type>string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Parses <ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> from Database Line </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Database Line</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Database Items/Principal.cs" line="62" column="33" bodyfile="Code/Database Items/Principal.cs" bodystart="62" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Class for <ref refid="class_l_p2_______projeto__1_1_1_principal" kindref="compound">Principal</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Principal</label>
+        <link refid="class_l_p2_______projeto__1_1_1_principal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LP2___Projeto_1.Principal</label>
+        <link refid="class_l_p2_______projeto__1_1_1_principal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IIMDBValue</label>
+        <link refid="interface_l_p2_______projeto__1_1_1_i_i_m_d_b_value"/>
+      </node>
+      <node id="2">
+        <label>IMDBObject</label>
+        <link refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Code/Database Items/Principal.cs" line="7" column="1" bodyfile="Code/Database Items/Principal.cs" bodystart="6" bodyend="69"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1acb0c32e42dffb5299819a85876848e52" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Category</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1ab9c9b20a0c0adcea3c0dcf07bba20839" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Characters</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1aabf6b2339bc39c7da86d83adb6942998" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>ID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1ab35147b75c66e93ce6478b348519d8b6" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Job</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_i_m_d_b_object_1a1d4fa41de7568d8e27b99894004b80ac" prot="protected" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Line</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1a7c2a5592e13d0b5b9e9444a92d4b36d8" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Parse</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1a7b708c7e4436c3a56b26521f309464b6" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>PersonID</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_principal_1a19550b79f2d4fcfff169485f01ca8e3d" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Principal</scope><name>Principal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

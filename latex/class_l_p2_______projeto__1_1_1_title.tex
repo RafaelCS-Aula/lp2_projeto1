@@ -1,0 +1,222 @@
+\doxysection{L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title Class Reference}
+\label{class_l_p2_______projeto__1_1_1_title}\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+
+
+Class for \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}  
+
+
+Inheritance diagram for L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_l_p2_______projeto__1_1_1_title}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Title} (string line)
+\begin{DoxyCompactList}\small\item\em Constructor, Recieves Line from Database \end{DoxyCompactList}\item 
+override string \textbf{ To\+String} ()
+\begin{DoxyCompactList}\small\item\em Converts \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Information to String \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Title} \textbf{ Parse} (string line)
+\begin{DoxyCompactList}\small\item\em Parse \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} from Database Line \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+override string \textbf{ ID} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[0]
+\begin{DoxyCompactList}\small\item\em \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} ID \end{DoxyCompactList}\item 
+virtual string \textbf{ Primary\+Title} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[2]
+\begin{DoxyCompactList}\small\item\em \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s Primary Name \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ I\+Enumerable$<$ char $>$ $>$ \textbf{ Genres}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Genres \end{DoxyCompactList}\item 
+virtual string \textbf{ Type} =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[1]
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Type \end{DoxyCompactList}\item 
+virtual bool \textbf{ Is\+Adult}
+\begin{DoxyCompactList}\small\item\em Returns bool on \char`\"{}if Adult\char`\"{} \end{DoxyCompactList}\item 
+virtual bool \textbf{ Is\+Episode} =$>$ Type.\+Contains(\char`\"{}tv\+Episode\char`\"{})
+\begin{DoxyCompactList}\small\item\em Returns bool on \char`\"{}if Episode\char`\"{} \end{DoxyCompactList}\item 
+virtual bool \textbf{ Is\+Series} =$>$ Type.\+Contains(\char`\"{}tv\+Series\char`\"{})
+\begin{DoxyCompactList}\small\item\em Returns bool on \char`\"{}if Series\char`\"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual ? short??? \textbf{ Start\+Year}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s Start\+Year (if available) \end{DoxyCompactList}\item 
+virtual ? short??? \textbf{ End\+Year}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s End\+Year (if available) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_adcac64ba2718214e97db534481f7af2e}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!Title@{Title}}
+\index{Title@{Title}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{Title()}
+{\footnotesize\ttfamily L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Title (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Constructor, Recieves Line from Database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Line from Database\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_ab6fd4f8c08e0ec413e6580fbddb27cf2}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!Parse@{Parse}}
+\index{Parse@{Parse}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{Parse()}
+{\footnotesize\ttfamily static \textbf{ Title} L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Parse (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} from Database Line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Database Line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}
+\end{DoxyReturn}
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a72e85cb7be29295c3a8b355e623cf86d}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!ToString@{ToString}}
+\index{ToString@{ToString}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{ToString()}
+{\footnotesize\ttfamily override string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Information to String 
+
+\begin{DoxyReturn}{Returns}
+\doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Information in String
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_aad8b9dd4601215b67e5c2b01d59fa808}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!Genres@{Genres}}
+\index{Genres@{Genres}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{Genres}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$I\+Enumerable$<$char$>$ $>$ L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Genres}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=> Line.ConvertToString().Split(\textcolor{stringliteral}{"\(\backslash\)t"})[6].Split(\textcolor{charliteral}{','})}
+\DoxyCodeLine{                    .Where(genre => genre != \textcolor{keyword}{null} \&\&}
+\DoxyCodeLine{                    genre.Length > 0 \&\&}
+\DoxyCodeLine{                    genre != \textcolor{stringliteral}{@"\(\backslash\)N"})}
+\DoxyCodeLine{                    .Select(x => x.ToCharArray())}
+
+\end{DoxyCode}
+
+
+Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Genres 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a01874bc1dc191d45b7ba1d81d79a2b7c}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!ID@{ID}}
+\index{ID@{ID}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{ID}
+{\footnotesize\ttfamily override string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+ID =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[0]}
+
+
+
+\doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} ID 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a78de04f7378b7ae7bfb307020d0cdf9e}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!IsAdult@{IsAdult}}
+\index{IsAdult@{IsAdult}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{IsAdult}
+{\footnotesize\ttfamily virtual bool L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Is\+Adult}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=> Line.ConvertToString()}
+\DoxyCodeLine{            .Split(\textcolor{stringliteral}{"\(\backslash\)t"})[3].Equals(\textcolor{stringliteral}{"0"}) ? false : \textcolor{keyword}{true}}
+
+\end{DoxyCode}
+
+
+Returns bool on \char`\"{}if Adult\char`\"{} 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_acfeaedecdeeb53d43c55d70da56d2689}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!IsEpisode@{IsEpisode}}
+\index{IsEpisode@{IsEpisode}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{IsEpisode}
+{\footnotesize\ttfamily virtual bool L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Is\+Episode =$>$ Type.\+Contains(\char`\"{}tv\+Episode\char`\"{})}
+
+
+
+Returns bool on \char`\"{}if Episode\char`\"{} 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_aa3c45b20ff8d8a5b5874ed9a2237fbda}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!IsSeries@{IsSeries}}
+\index{IsSeries@{IsSeries}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{IsSeries}
+{\footnotesize\ttfamily virtual bool L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Is\+Series =$>$ Type.\+Contains(\char`\"{}tv\+Series\char`\"{})}
+
+
+
+Returns bool on \char`\"{}if Series\char`\"{} 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a1d0550590861e2037ce3347847a8d212}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!PrimaryTitle@{PrimaryTitle}}
+\index{PrimaryTitle@{PrimaryTitle}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{PrimaryTitle}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Primary\+Title =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[2]}
+
+
+
+\doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s Primary Name 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a02b97f47a3ecd8e30ff695849b650ed4}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!Type@{Type}}
+\index{Type@{Type}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{Type}
+{\footnotesize\ttfamily virtual string L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Type =$>$ Line.\+Convert\+To\+String().Split(\char`\"{}\textbackslash{}t\char`\"{})[1]}
+
+
+
+Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title} Type 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_adc25932b9f9d775490b6540058dc12dc}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!EndYear@{EndYear}}
+\index{EndYear@{EndYear}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{EndYear}
+{\footnotesize\ttfamily virtual ? short??? L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+End\+Year\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s End\+Year (if available) 
+
+\mbox{\label{class_l_p2_______projeto__1_1_1_title_a2cd0431a36c66ac7dfd6681e4de2ac32}} 
+\index{LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}!StartYear@{StartYear}}
+\index{StartYear@{StartYear}!LP2\_\_\_Projeto\_1.Title@{LP2\_\_\_Projeto\_1.Title}}
+\doxysubsubsection{StartYear}
+{\footnotesize\ttfamily virtual ? short??? L\+P2\+\_\+\+\_\+\+\_\+\+Projeto\+\_\+1.\+Title.\+Start\+Year\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns \doxyref{Title}{p.}{class_l_p2_______projeto__1_1_1_title}\textquotesingle{}s Start\+Year (if available) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Database Items/\textbf{ Title.\+cs}\end{DoxyCompactItemize}

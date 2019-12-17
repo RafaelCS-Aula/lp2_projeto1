@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_l_p2_______projeto__1_1_1_table_1_1_column" kind="class" language="C#" prot="public">
+    <compoundname>LP2___Projeto_1::Table::Column</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_l_p2_______projeto__1_1_1_table_1_1_column_1aeb58050403b7dc750a383b0494f749c1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string LP2___Projeto_1.Table.Column.Header</definition>
+        <argsstring></argsstring>
+        <name>Header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Table.cs" line="17" column="27" bodyfile="Code/Visual Output/Table.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="property" id="class_l_p2_______projeto__1_1_1_table_1_1_column_1af28cd4316962618d3c91650fe5e1c965" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref></type>
+        <definition>Rect LP2___Projeto_1.Table.Column.Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Table.cs" line="18" column="25" bodyfile="Code/Visual Output/Table.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_p2_______projeto__1_1_1_table_1_1_column_1ae2bf841b0f7e0313b927784e95d946df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LP2___Projeto_1.Table.Column.Column</definition>
+        <argsstring>(Rect size)</argsstring>
+        <name>Column</name>
+        <param>
+          <type><ref refid="struct_l_p2_______projeto__1_1_1_rect" kindref="compound">Rect</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Constructor, Sets <ref refid="class_l_p2_______projeto__1_1_1_table_1_1_column" kindref="compound">Column</ref> Size </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of <ref refid="class_l_p2_______projeto__1_1_1_table_1_1_column" kindref="compound">Column</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Code/Visual Output/Table.cs" line="24" column="20" bodyfile="Code/Visual Output/Table.cs" bodystart="24" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for Columns </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Code/Visual Output/Table.cs" line="16" column="1" bodyfile="Code/Visual Output/Table.cs" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_l_p2_______projeto__1_1_1_table_1_1_column_1ae2bf841b0f7e0313b927784e95d946df" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Table::Column</scope><name>Column</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_table_1_1_column_1aeb58050403b7dc750a383b0494f749c1" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Table::Column</scope><name>Header</name></member>
+      <member refid="class_l_p2_______projeto__1_1_1_table_1_1_column_1af28cd4316962618d3c91650fe5e1c965" prot="public" virt="non-virtual"><scope>LP2___Projeto_1::Table::Column</scope><name>Size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
