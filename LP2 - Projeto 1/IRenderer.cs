@@ -21,24 +21,24 @@ namespace LP2___Projeto_1
             int totalElements,
             string title
             );
-        void PrintTitleSpecs(
+        void DrawTitleSpecs(
             KeyValuePair<Title, Rating> title,
             IDictionary<Person, Principal> cast,
             IEnumerable<Person> directors,
             IEnumerable<Person> writers);
-        void PrintTitleSpecs(
+        void DrawTitleSpecs(
            KeyValuePair<Title, Rating> title,
            KeyValuePair<Title, Rating>? episodeParent,
            IDictionary<Person, Principal> cast,
            IEnumerable<Person> directors,
            IEnumerable<Person> writers);
-        void PrintEpisodeSpecs(
+        void DrawEpisodeSpecs(
             KeyValuePair<string, Episode> episode,
             KeyValuePair<Title, Rating> title,
             IDictionary<Person, Principal> cast,
             IEnumerable<Person> directors,
             IEnumerable<Person> writers);
-        void PrintNameSpecs(
+        void DrawNameSpecs(
             Person person,
             IDictionary<string, Title> knownForTitles);
     }

@@ -9,8 +9,8 @@ namespace LP2___Projeto_1
     /// </summary>
     public abstract class GeneralRenderer : IMenuRenderer
     {
-        protected ResultsPrinter resultsPrinter;
-        
+        protected  IMDBSearcher IMDBSearcher { get;  set; }
+       
         public int MaxResults { get; set; }
 
         protected virtual string Figlet => @"
@@ -23,10 +23,6 @@ namespace LP2___Projeto_1
 '####: ##:::: ##: ########:: ########::. ######:: ########: ##:::: ##: ##:::. ##:. ######:: ##:::: ##: ########: ##:::. ##:
 ....::..:::::..::........:::........::::......:::........::..:::::..::..:::::..:::......:::..:::::..::........::..:::::..::";
 
-        public MenuRenderer(int maxResults = 15)
-        {
-            MaxResults = maxResults;
-        }
 
         public void DrawTitle(
             ConsoleColor color = ConsoleColor.Red)
@@ -187,7 +183,7 @@ namespace LP2___Projeto_1
             }
         }
 
-        public void PrintTitleSpecs(
+        public void DrawTitleSpecs(
             KeyValuePair<Title, Rating> title,
             IDictionary<Person, Principal> cast,
             IEnumerable<Person> directors,
@@ -225,7 +221,7 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
-        public void PrintEpisodeSpecs(
+        public void DrawEpisodeSpecs(
             KeyValuePair<string, Episode> episode,
             KeyValuePair<Title, Rating> title,
             IDictionary<Person, Principal> cast,
@@ -268,7 +264,7 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
-        public void PrintTitleSpecs(
+        public void DrawTitleSpecs(
            KeyValuePair<Title, Rating> title,
            KeyValuePair<Title, Rating>? episodeParent,
            IDictionary<Person, Principal> cast,
@@ -316,7 +312,7 @@ namespace LP2___Projeto_1
             Console.ReadLine();
         }
 
-        public void PrintNameSpecs(
+        public void DrawNameSpecs(
             Person person,
             IDictionary<string, Title> knownForTitles)
         {

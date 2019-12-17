@@ -6,8 +6,12 @@ namespace LP2___Projeto_1
 {
     sealed class ResultsPrinter : GeneralRenderer
     {
+        public ResultsPrinter(IMDBSearcher searcher)
+        {
+            IMDBSearcher = searcher;
+        }
 
-        private void PrintTitleResults(
+        public void PrintTitleResults(
             IDictionary<Title, Rating> filteredTitles)
         {
             List<KeyValuePair<Title, Rating>> titles = filteredTitles.ToList();
@@ -172,7 +176,7 @@ namespace LP2___Projeto_1
                 );
         }                
 
-        private void PrintEpisodeSpecs(
+        public void PrintEpisodeSpecs(
             KeyValuePair<string, Episode> episode, 
             KeyValuePair<Title, Rating> title)
         {
@@ -193,7 +197,7 @@ namespace LP2___Projeto_1
                 IMDBSearcher.LoadWriters(people2, crew));
         }
         
-        private void PrintTitleSpecs(
+        public void PrintTitleSpecs(
            KeyValuePair<Title, Rating> title)
         {
             if (title.Key.IsSeries)
@@ -234,7 +238,7 @@ namespace LP2___Projeto_1
             }
         }
 
-        private void PrintNameResults(
+        public void PrintNameResults(
             Person[] people)
         {
             List<string[]> options = new List<string[]>();
@@ -328,7 +332,7 @@ namespace LP2___Projeto_1
                 );
         }
 
-        private void PrintNameSpecs(
+        public void PrintNameSpecs(
             Person person)
         {
             IDictionary<string, Title> values =

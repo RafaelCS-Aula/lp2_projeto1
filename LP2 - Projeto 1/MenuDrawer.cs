@@ -4,19 +4,17 @@ using System.Linq;
 
 namespace LP2___Projeto_1
 {
-    sealed public class Menu : IMenu
+    sealed class MenuDrawer : GeneralRenderer, IMenu
     {
-        private IMDBSearcher IMDBSearcher { get; }
-        private IMenuRenderer Renderer { get; }
-
-        public Menu(
-            IMenuRenderer renderer, 
-            string appName)
+        ResultsPrinter rP;
+        public MenuDrawer(ResultsPrinter resultPrt, IMDBSearcher searcher)
         {
-            Renderer = renderer;
-            Renderer.DrawTitle();
-            Renderer.DrawLoading();
-            IMDBSearcher = new IMDBSearcher(appName);
+            //Renderer = renderer;
+            DrawTitle();
+            DrawLoading();
+            rP = resultPrt;
+            IMDBSearcher = searcher;
+            
         }
 
         private void DrawTitleSearchMenu(
@@ -25,40 +23,41 @@ namespace LP2___Projeto_1
             List<string[]> options;
             IPrintable textBox;
             IDictionary<Title, Rating> titles;
-            Renderer.DrawTitle();
+            DrawTitle();
             switch (searchType)
             {
                 case SearchType.Title:
                     textBox = new TextBox("Title", new Rect(35, 13, 50, 2));
                     textBox.Print();
                     string title = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     titles =
                         IMDBSearcher.LoadTitles(SearchType.Title, title);
-                    PrintTitleResults(titles);
+                    rP.PrintTitleResults(titles);
                     break;
                 case SearchType.ForAdults:
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     options = new List<string[]>()
                     {
                         new string[] { "true" },
                         new string[] { "false" }
                     };
-                    Renderer.DrawMenu(
+                    DrawMenu(
                         "Search Title By Adult Content",
                         new Rect(35, 10, 50, 4),
                         options,
                         (short e) =>
                         {
                             Console.Clear();
-                            Renderer.DrawTitle();
-                            Renderer.DrawLoading();
+                            DrawTitle();
+                            DrawLoading();
                             titles =
                                 IMDBSearcher.LoadTitles(SearchType.ForAdults,
                                 options[e][0]);
-                            PrintTitleResults(titles);
-                            Renderer.DrawTitle();
+
+                            rP.PrintTitleResults(titles);
+                            DrawTitle();
                             titles = null;
                             GC.Collect();
                             return false;
@@ -67,44 +66,47 @@ namespace LP2___Projeto_1
                     break;
                 case SearchType.StartYear:
                     textBox = new TextBox("Start Year", new Rect(35, 13, 50, 2));
-                    Renderer.DrawTitle();
+
+                    DrawTitle();
                     textBox.Print();
                     string startYear = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+
+                    DrawTitle();
+                    DrawLoading();
                     titles =
-                        IMDBSearcher.LoadTitles(SearchType.StartYear, startYear);
-                    PrintTitleResults(titles);
+                    IMDBSearcher.LoadTitles(SearchType.StartYear, startYear);
+
+                    rP.PrintTitleResults(titles);
                     break;
                 case SearchType.EndYear:
                     textBox = new TextBox("End Year", new Rect(35, 13, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     string endYear = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     titles =
                         IMDBSearcher.LoadTitles(SearchType.EndYear, endYear);
-                    PrintTitleResults(titles);
+                    rP.PrintTitleResults(titles);
                     break;
                 case SearchType.Type:
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     options = new List<string[]>();
                     foreach (string s in IMDBSearcher.Types.ToArray())
                         options.Add(new string[] { s });
-                    Renderer.DrawMenu(
+                    DrawMenu(
                         "Search Title By Type",
                         new Rect(35, 10, 50, IMDBSearcher.Types.Count + 1),
                         options,
                         (short e) =>
                         {
-                            Renderer.DrawTitle();
-                            Renderer.DrawLoading();
+                            DrawTitle();
+                            DrawLoading();
                             titles =
                                 IMDBSearcher.LoadTitles(SearchType.Type,
                                 IMDBSearcher.Types.ElementAt(e));
-                            PrintTitleResults(titles);
-                            Renderer.DrawTitle();
+                            rP.PrintTitleResults(titles);
+                            DrawTitle();
                             titles = null;
                             GC.Collect();
                             return false;
@@ -112,24 +114,24 @@ namespace LP2___Projeto_1
                         () => { });
                     break;
                 case SearchType.Genre:
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     options = new List<string[]>();
                     foreach (string s in IMDBSearcher.Genres.ToArray())
                         options.Add(new string[] { s });
-                    Renderer.DrawMenu(
+                DrawMenu(
                         "Search Title By Genre",
                         new Rect(35, 10, 50, IMDBSearcher.Genres.Count + 1),
                         options,
                         (short e) =>
                         {
                             Console.Clear();
-                            Renderer.DrawTitle();
+                            DrawTitle();
                             Console.WriteLine("Loading...");
                             titles =
                                 IMDBSearcher.LoadTitles(SearchType.Genre,
                                 IMDBSearcher.Genres.ElementAt(e));
-                            PrintTitleResults(titles);
-                            Renderer.DrawTitle();
+                            rP.PrintTitleResults(titles);
+                            DrawTitle();
                             titles = null;
                             GC.Collect();
                             return false;
@@ -142,7 +144,7 @@ namespace LP2___Projeto_1
                     IPrintable textBox3 = new TextBox("End Year", new Rect(35, 19, 50, 2));
                     IPrintable textBox4 = new TextBox("Type", new Rect(35, 22, 50, 2));
                     IPrintable textBox5 = new TextBox("Genre", new Rect(35, 25, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     textBox2.Print();
                     textBox3.Print();
@@ -153,8 +155,8 @@ namespace LP2___Projeto_1
                     string endYear2 = ((TextBox)textBox3).Get();
                     string type = ((TextBox)textBox4).Get();
                     string genre = ((TextBox)textBox5).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     string query = string.Join(',', new string[]
                     {
                         title2,
@@ -165,23 +167,15 @@ namespace LP2___Projeto_1
                     });
                     titles =
                         IMDBSearcher.LoadTitles(SearchType.Custom, query);
-                    PrintTitleResults(titles);
+                    rP.PrintTitleResults(titles);
                     break;
             }
-            Renderer.DrawTitle();
-            Renderer.DrawLoading();
+            DrawTitle();
+            DrawLoading();
             titles = null;
             GC.Collect();
-            Renderer.DrawTitle();
+            DrawTitle();
         }
-
-
-
-       
-
-
-
-
 
         private void DrawPersonSearchMenu(
             SearchType searchType)
@@ -193,39 +187,39 @@ namespace LP2___Projeto_1
             {
                 case SearchType.Name:
                     textBox = new TextBox("Name", new Rect(35, 13, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     string name = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     people =
                         IMDBSearcher.LoadNames(SearchType.Name, name);
-                    PrintNameResults(people);
+                    rP.PrintNameResults(people);
                     break;
                 case SearchType.BirthYear:
                     textBox = new TextBox("Birth Year", new Rect(35, 13, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     string birthYear = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     people =
                         IMDBSearcher.LoadNames(SearchType.BirthYear, birthYear);
-                    PrintNameResults(people);
+                    rP.PrintNameResults(people);
                     break;
                 case SearchType.DeathYear:
                     textBox = new TextBox("Death Year", new Rect(35, 13, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     string deathYear = ((TextBox)textBox).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     people =
                         IMDBSearcher.LoadNames(SearchType.DeathYear, deathYear);
-                    PrintNameResults(people);
+                    rP.PrintNameResults(people);
                     break;
                 case SearchType.Profession:
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     options = new List<string[]>();
                     foreach (string s in IMDBSearcher.Professions.ToArray())
                         if (!string.IsNullOrEmpty(s))
@@ -237,19 +231,19 @@ namespace LP2___Projeto_1
                             options.Add(new string[] { tempString });
                         }
 
-                    Renderer.DrawMenu(
+                    DrawMenu(
                         "Search Person By Profession",
                         new Rect(35, 10, 50, options.Count + 1),
                         options,
                         (short e) =>
                         {
-                            Renderer.DrawTitle();
+                            DrawTitle();
                             Console.WriteLine("Loading...");
                             people =
                                 IMDBSearcher.LoadNames(SearchType.Profession,
                                 options[e][0].ToLower().Replace(" ", "_"));
-                            PrintNameResults(people);
-                            Renderer.DrawTitle();
+                            rP.PrintNameResults(people);
+                            DrawTitle();
                             people = null;
                             GC.Collect();
                             return false;
@@ -261,7 +255,7 @@ namespace LP2___Projeto_1
                     IPrintable textBox2 = new TextBox("Birth Year", new Rect(35, 16, 50, 2));
                     IPrintable textBox3 = new TextBox("Death Year", new Rect(35, 19, 50, 2));
                     IPrintable textBox4 = new TextBox("Profession", new Rect(35, 22, 50, 2));
-                    Renderer.DrawTitle();
+                    DrawTitle();
                     textBox.Print();
                     textBox2.Print();
                     textBox3.Print();
@@ -270,8 +264,8 @@ namespace LP2___Projeto_1
                     string birthYear2 = ((TextBox)textBox2).Get();
                     string deathYear2 = ((TextBox)textBox3).Get();
                     string profession2 = ((TextBox)textBox4).Get();
-                    Renderer.DrawTitle();
-                    Renderer.DrawLoading();
+                    DrawTitle();
+                    DrawLoading();
                     string query = string.Join(',', new string[]
                     {
                         name2,
@@ -281,119 +275,14 @@ namespace LP2___Projeto_1
                     });
                     people =
                         IMDBSearcher.LoadNames(SearchType.Custom, query);
-                    PrintNameResults(people);
+                    rP.PrintNameResults(people);
                     break;
             }
-            Renderer.DrawTitle();
-            Renderer.DrawLoading();
+            DrawTitle();
+            DrawLoading();
             people = null;
             GC.Collect();
-            Renderer.DrawTitle();
-        }
-
-        private void PrintNameResults(
-            Person[] people)
-        {
-            List<string[]> options = new List<string[]>();
-
-            Renderer.DrawResults(
-                onIteration:(IPrintable table, int index, int selection) =>
-                {
-                    Person t = people[index];
-
-                    string name = t.PrimaryName.ConvertToString().ToString();
-                    if (name.Length > 45)
-                        name = name.Substring(0, 42) + "...";
-
-                    string c = t.BirthYear.HasValue ?
-                            t.BirthYear.Value.ToString() :
-                            "N/A";
-
-                    string s = t.DeathYear.HasValue ?
-                        t.DeathYear.ToString() :
-                        "N/A";
-
-                    string[] p = t.PrimaryProfessions.ToStringArray();
-                    for (int i = 0; i < p.Length; i++)
-                        if (!string.IsNullOrEmpty(p[i]))
-                            p[i] = p[i].First().ToString().ToUpper() +
-                                   p[i].Substring(1, p[i].Length - 1);
-
-                    string d = p.ToStringArray(3).Replace("_", " ");
-                    if (d.Length > 45)
-                        d = d.Substring(0, 45) + "...";
-
-                    options.Add(new string[] {
-                            name,
-                            c,
-                            s,
-                            d
-                        });
-                },
-                onDraw:(IPrintable table, int selection, int maxResults) =>
-                {
-                    ((Table)table).Options = options;
-                    ((Table)table).Columns[0].Size = new Rect(0, 0, 40, 1);
-                    ((Table)table).Columns[0].Header = "Primary Name";
-                    ((Table)table).Columns[1].Size = new Rect(0, 0, 12, 1);
-                    ((Table)table).Columns[1].Header = "Birth Year";
-                    ((Table)table).Columns[2].Size = new Rect(0, 0, 12, 1);
-                    ((Table)table).Columns[2].Header = "Death Year";
-                    ((Table)table).Columns[3].Size = new Rect(0, 0, 20, 1);
-                    ((Table)table).Columns[3].Header = "Professions";
-
-                    ((Table)table).Selection = selection % maxResults;
-                    table.Print();
-
-                    int counter = options.Count;
-
-                    options.Clear();
-
-                    Console.CursorTop = 33;
-                    Console.CursorLeft = 0;
-                    for (int i = 33; i < 38; i++)
-                        Console.WriteLine(' '.Repeat(Console.BufferWidth));
-
-                    Console.CursorTop = 33;
-                    "Selection : ".Print(ConsoleColor.Red, ConsoleColor.Black, false);
-                    people[selection].ToString().Print();
-
-                    Console.CursorTop = 35;
-                    "Sorting : ".Print(ConsoleColor.Yellow, ConsoleColor.Black, false);
-                    Console.WriteLine("a - By Name\ts - By Birth Year\td - By Death Year");
-
-                    return counter;
-                },
-                onKeyPress:(ConsoleKeyInfo keyInfo, int selection) =>
-                {
-                    if (keyInfo.Key == ConsoleKey.A)
-                        people = people.Sort(x => x.PrimaryName.ConvertToString()).ToArray();
-                    else if (keyInfo.Key == ConsoleKey.S)
-                        people = people.Sort(x => x.BirthYear).ToArray();
-                    else if (keyInfo.Key == ConsoleKey.D)
-                        people = people.Sort(x => x.DeathYear).ToArray();
-                    else if (keyInfo.Key == ConsoleKey.Enter)
-                    {
-                        Renderer.DrawTitle();
-                        Renderer.DrawLoading();
-                        PrintNameSpecs(people[selection]);
-                        Renderer.DrawTitle();
-                    }
-                },
-                totalElements:people.Length,
-                title:"People Result"
-                );
-        }
-
-        private void PrintNameSpecs(
-            Person person)
-        {
-            IDictionary<string, Title> values =
-                IMDBSearcher.LoadTitles(person);
-
-            Renderer.PrintNameSpecs(
-                person, 
-                values);
+            DrawTitle();
         }
 
         private void DrawTitlesMenu()
@@ -413,7 +302,7 @@ namespace LP2___Projeto_1
             foreach (string s in options)
                 myOptions.Add(new string[] { s });
 
-            Renderer.DrawMenu(
+            DrawMenu(
                 "Search Titles Menu",
                 new Rect(35, 10, 50, 10),
                 myOptions,
@@ -444,7 +333,7 @@ namespace LP2___Projeto_1
                             break;
                     }
 
-                    Renderer.DrawTitle();
+                    DrawTitle();
 
                     return false;
                 },
@@ -466,7 +355,7 @@ namespace LP2___Projeto_1
             foreach (string s in options)
                 myOptions.Add(new string[] { s });
 
-            Renderer.DrawMenu(
+            DrawMenu(
                 "Search People Menu",
                 new Rect(35, 10, 50, 10),
                 myOptions,
@@ -491,7 +380,7 @@ namespace LP2___Projeto_1
                             break;
                     }
 
-                    Renderer.DrawTitle();
+                    DrawTitle();
 
                     return false;
                 },
@@ -511,7 +400,7 @@ namespace LP2___Projeto_1
             foreach (string s in options)
                 myOptions.Add(new string[] { s });
 
-            Renderer.DrawMenu(
+            DrawMenu(
                 "Main Menu",
                 new Rect(35, 10, 50, 5),
                 myOptions,
@@ -529,7 +418,7 @@ namespace LP2___Projeto_1
                             return true;
                     }
 
-                    Renderer.DrawTitle();
+                    DrawTitle();
 
                     return false;
                 },
